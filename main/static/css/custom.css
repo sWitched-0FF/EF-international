@@ -1,0 +1,11 @@
+.header-bgimg {
+    background: #eee url(../img/finter_small.png) no-repeat;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+a {
+    color: #000;
+}

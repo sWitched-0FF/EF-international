@@ -1,0 +1,35 @@
+{% load bootstrap3 %}
+{% load feincms_tags %}
+{% load feincms_page_tags %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+{% include 'header.html' %}
+
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    {% block sidebar %}
+    {% feincms_nav feincms_page level=1 depth=1 as pages %}
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="list-group">
+            <h1>Новости</h1>
+          {% for page in pages %}
+            <a href="{{page.get_absolute_url}}" class="list-group-item">{{page.title}}</a>
+          {% endfor %}
+          </div>
+    </div>
+    {% endblock %}
+    {% block content %}
+    <div class="col-md-4">
+        {% for content in feincms_page.content.main %}
+          {{ content.render }}
+        {% endfor %}
+    {% endblock %}
+  </div>
+</div>
+<footer>
+  <p>&copy; indev-group 2014</p>
+</footer>
