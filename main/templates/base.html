@@ -1,35 +1,287 @@
-{% load bootstrap3 %}
 {% load feincms_tags %}
 {% load feincms_page_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ExpoForum</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
 
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-{% bootstrap_messages %}
-<!-- Main jumbotron for a primary marketing message or call to action -->
-{% include 'header.html' %}
-
-<div class="container">
-  <!-- Example row of columns -->
-  <div class="row">
-    {% block sidebar %}
-    {% feincms_nav feincms_page level=1 depth=1 as pages %}
-    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div class="list-group">
-            <h1>Новости</h1>
-          {% for page in pages %}
-            <a href="{{page.get_absolute_url}}" class="list-group-item">{{page.title}}</a>
-          {% endfor %}
-          </div>
-    </div>
-    {% endblock %}
+    <script type="text/javascript" src="/static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="headlogo">
+                <a href="/"><img src="/static/images/design/logo.png" alt="ExpoForum"></a>
+            </div>
+            <div class="headcontacts">
+                +7 (812) <b>240-40-40</b> <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+            </div>
+            <div class="rightsection">
+                <div class="languageselect">
+                    <ul>
+                        <li><a href="#" class="languageicon rus">rus</a></li>
+                        <li><a href="#" class="languageicon eng">eng</a></li>
+                    </ul>
+                </div>
+                <div class="headersearch">
+                    <form class="" action="#" method="post">
+                        <input type="search" name="keyword" value="" placeholder="Поиск по сайту">
+                        <button type="submit" class="headersearchbtn">Найти</button>
+                    </form>
+                </div>
+                <div class="headmenu">
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Санкт-Петербург</a></li>
+                        <li><a href="#">Новости</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="topcontentblock">
+                <div class="sidebar">
+                    <div class="topsubmenu">
+                        <ul class="topsubmenulist">
+                            <li><a href="#" class="topsubmenulink eventscalendaricon">Календарь событий</a></li>
+                            <li><a href="#" class="topsubmenulink schemeicon">План и инфраструктура</a></li>
+                            <li><a href="#" class="topsubmenulink routeicon">Как добраться</a></li>
+                        </ul>
+                    </div>
+                    <div class="slidernav">
+                        <ul class="slidernavlist" id="slidernavlist">
+                            <li><a href="#" class="slidernavlink">Услуги для экспонентов</a></li>
+                            <li><a href="#" class="slidernavlink">КВЦ ЭкспоФорум</a></li>
+                            <li><a href="#" class="slidernavlink long">Организация мероприятий «под ключ»</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slidercontent" id="promoslider">
+                    <ul class="slidercontentlist">
+                        <li><a href="#" class="slidercontentlink"><img src="/static/images/slider1.jpg" alt="E"></a></li>
+                        <li><a href="#" class="slidercontentlink"><img src="/static/images/slider2.jpg" alt="E"></a></li>
+                        <li><a href="#" class="slidercontentlink"><img src="/static/images/slider3.jpg" alt="E"></a></li>
+                    </ul>
+                </div>
+                <nav class="mainnav">
+                    <ul class="mainnavlist">
+                        <li><a href="#" class="mainnavlink">Организаторам</a></li>
+                        <li><a href="#" class="mainnavlink">Участникам</a></li>
+                        <li><a href="#" class="mainnavlink">Посетителям</a></li>
+                        <li><a href="#" class="mainnavlink">Прессе</a></li>
+                    </ul>
+                </nav>
+                <div class="infobannersblock">
+                    <div class="announcements">
+                        <h3>Ближайшие события</h3>
+                        <ul class="announcementslist">
+                            <li class="announcement"><time>26.08 – 01.09</time> Агрорусь</li>
+                            <li class="announcement"><time>10.09 – 13.09</time> Энергетический форум</li>
+                            <li class="announcement"><time>07.10 – 10.10</time> Петербургский Международный Газовый Форум 2014</li>
+                            <li class="announcement"><time>15.10 – 17.10</time> Биоиндустрия 2014</li>
+                            <li class="announcement"><time>15.10 – 17.10</time> Петербургский международный форум здоровья</li>
+                        </ul>
+                        <a href="#" class="allannouncements eventscalendaricon">Смотреть все события в календаре</a>
+                    </div>
+                    <div class="infobanner greenbanner">
+                        <img src="/static/images/banner1.jpg" alt="Агрорусь">
+                        <section class="infobannertext">
+                            <p><time>26 августа — 1 сентября</time></p>
+                            <h3>Агрорусь</h3>
+                            <p>XXII международная агропромышленная выставка-ярмарка. Специализированные экспозиции. Деловая программа...</p>
+                        </section>
+                    </div>
+                    <div class="infobanner lightbluebanner">
+                        <img src="/static/images/banner2.jpg" alt="Энергетический форум">
+                        <section class="infobannertext">
+                            <p><time>10 — 13 сентября</time></p>
+                            <h3>Энергетический форум</h3>
+                            <p>14-й Петербургский международный энергетический форум – конгрессно-выставочные мероприятия...</p>
+                        </section>
+                    </div>
+                    <div class="infobanner bluebanner" id="advanced">
+                        <img src="/static/images/banner3.jpg" alt="Петербургский Международный Газовый Форум 2014">
+                        <section class="infobannertext">
+                            <p><time>7 октября — 10 октября</time></p>
+                            <h3>Петербургский Международный Газовый Форум 2014</h3>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="middlecontentblock">
+                <div class="promoblockspart">
     {% block content %}
-    <div class="col-md-4">
         {% for content in feincms_page.content.main %}
           {{ content.render }}
         {% endfor %}
     {% endblock %}
-  </div>
-</div>
-<footer>
-  <p>&copy; indev-group 2014</p>
-</footer>
+                    <div class="promoblock">
+                        <img src="/static/images/promo4.jpg" alt="Inter food">
+                    </div>
+                </div>
+                <div class="newsbar">
+                    {% feincms_nav feincms_page level=1 depth=1 as pages %}
+                    <h3>Новости</h3>
+                    <ul class="newsbarlist">
+                        {% for page in pages %}
+                            <li class="newsbaritem">
+                                <p><time>{{page.publication_date}}</time></p>
+                                <p><a href="{{page.get_absolute_url}}" >{{page.title}}</a></p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {#<a href="#" class="allnewslink newsiconblue">Читать все новости</a>#}
+                    <form class="newssubscribe" action="#" method="post">
+                        <button type="submit" name="subscribebtn">Подписаться на новости</button>
+                    </form>
+                </div>
+                <div class="partnersblock">
+                    <h3>Партнеры</h3>
+                    <div class="partnersview" id="partners">
+                        <ul class="partnerslist">
+                            <li class="partnerscell">
+                                <a href="#" class="partnerbox"><img src="/static/images/partner1.png" alt="pertner1"></a>
+                                <a href="#" class="partnerbox"><img src="/static/images/partner2.png" alt="pertner2"></a>
+                            </li>
+                            <li class="partnerscell">
+                                <a href="#" class="partnerbox"><img src="/static/images/partner3.png" alt="pertner3"></a>
+                                <a href="#" class="partnerbox"><img src="/static/images/partner4.png" alt="pertner4"></a>
+                            </li>
+                            <li class="partnerscell">
+                                <a href="#" class="partnerbox"><img src="/static/images/partner5.png" alt="pertner5"></a>
+                                <a href="#" class="partnerbox"><img src="/static/images/partner6.png" alt="pertner6"></a>
+                            </li>
+                            <li class="partnerscell">
+                                <a href="#" class="partnerbox"><img src="/static/images/partner1.png" alt="pertner1"></a>
+                                <a href="#" class="partnerbox"><img src="/static/images/partner2.png" alt="pertner2"></a>
+                            </li>
+                            <li class="partnerscell">
+                                <a href="#" class="partnerbox"><img src="/static/images/partner3.png" alt="pertner3"></a>
+                                <a href="#" class="partnerbox"><img src="/static/images/partner4.png" alt="pertner4"></a>
+                            </li>
+                            <li class="partnerscell">
+                                <a href="#" class="partnerbox"><img src="/static/images/partner5.png" alt="pertner5"></a>
+                                <a href="#" class="partnerbox"><img src="/static/images/partner6.png" alt="pertner6"></a>
+                            </li>
+                            <li class="partnerscell">
+                                <a href="#" class="partnerbox"><img src="/static/images/partner1.png" alt="pertner1"></a>
+                                <a href="#" class="partnerbox"><img src="/static/images/partner2.png" alt="pertner2"></a>
+                            </li>
+                            <li class="partnerscell">
+                                <a href="#" class="partnerbox"><img src="/static/images/partner3.png" alt="pertner3"></a>
+                                <a href="#" class="partnerbox"><img src="/static/images/partner4.png" alt="pertner4"></a>
+                            </li>
+                            <li class="partnerscell">
+                                <a href="#" class="partnerbox"><img src="/static/images/partner5.png" alt="pertner5"></a>
+                                <a href="#" class="partnerbox"><img src="/static/images/partner6.png" alt="pertner6"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="partnersnav prev" id="prevslide">&lt;</a>
+                    <a href="#" class="partnersnav next" id="nextslide">&gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottomnav">
+        <div class="container">
+            <div class="column3">
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>О компании</b></a></li>
+                    <li><a href="#">Миссия</a></li>
+                    <li><a href="#">История</a></li>
+                    <li><a href="#">Партнеры</a></li>
+                    <li><a href="#">СМИ о нас</a></li>
+                    <li><a href="#">Медиа-банк</a></li>
+                    <li><a href="#">Руководство</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Контакты подразделений</a></li>
+                </ul>
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>Новости</b></a></li>
+                    <li><a href="#">Новости компании</a></li>
+                    <li><a href="#">Новости выставок</a></li>
+                </ul>
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>О Санкт-Петербурге</b></a></li>
+                </ul>
+            </div>
+            <div class="column3">
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>Посетителям</b></a></li>
+                    <li><a href="#">Сервисы</a></li>
+                    <li><a href="#">Онлайн-регистрация на мероприятие</a></li>
+                    <li><a href="#">Организация поездки</a></li>
+                </ul>
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>Прессе</b></a></li>
+                    <li><a href="#">Пресс-релизы</a></li>
+                    <li><a href="#">Аккредитация</a></li>
+                    <li><a href="#">Пресс-центр</a></li>
+                    <li><a href="#">Организация поездки</a></li>
+                </ul>
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>Участникам</b></a></li>
+                    <li><a href="#">Общие условия участия</a></li>
+                    <li><a href="#">Онлайн-заявка на участие</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Электронные каталоги</a></li>
+                </ul>
+            </div>
+            <div class="column3">
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>Организаторам</b></a></li>
+                    <li><a href="#">Преимущества центра</a></li>
+                    <li><a href="#">Конгресс-центр</a></li>
+                    <li><a href="#">Выставочные павильоны</a></li>
+                    <li><a href="#">Рестораны и кафе</a></li>
+                    <li><a href="#">Мероприятия</a></li>
+                    <li><a href="#">Подбор помещения</a></li>
+                    <li><a href="#">Онлайн-заявка на организацию мероприятия</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Документация</a></li>
+                </ul>
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>Календарь событий</b></a></li>
+                </ul>
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>Как добраться</b></a></li>
+                </ul>
+                <ul class="bottomlinkslist">
+                    <li><a href="#"><b>План и инфраструктура комплекса</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                Экспофорум &copy; 2014
+            </div>
+            <div class="footercontacts">
+                +7 (812) 240-40-40  <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+            </div>
+            <div class="footersocial">
+                <p>Экспофорум в соцсетях:</p>
+                <ul class="sociallinks">
+                    <li><a href="#" class="socialicon vkcom">vkcom</a></li>
+                    <li><a href="#" class="socialicon facebook">facebook</a></li>
+                    <li><a href="#" class="socialicon googleplus">googleplus</a></li>
+                    <li><a href="#" class="socialicon twitter">twitter</a></li>
+                    <li><a href="#" class="socialicon youtube">youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
