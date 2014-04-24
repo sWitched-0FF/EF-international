@@ -120,11 +120,13 @@
             </div>
             <div class="middlecontentblock">
                 <div class="promoblockspart">
-    {% block content %}
-        {% for content in feincms_page.content.main %}
-          {{ content.render }}
-        {% endfor %}
-    {% endblock %}
+                    <p><time>{{ feincms_page.publication_date }}</time></p>
+                    <p>{{ feincms_page.title }}</p>
+                    {% block content %}
+                        {% for content in feincms_page.content.main %}
+                          {{ content.render }}
+                        {% endfor %}
+                    {% endblock %}
                     <div class="promoblock">
                         <img src="/static/images/promo4.jpg" alt="Inter food">
                     </div>
