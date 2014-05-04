@@ -24,7 +24,42 @@
 		});
 	slideNav.find('li:first').find('a').trigger('click');
 	var timerId = setInterval(nextSlide, 10000,slideNav);
+
+	$('.accordiontitle').click(function(){
+		$(this).siblings().slideToggle();
+		$(this).parent().toggleClass('closed');
+		});
+	$('.tabscontrol a').click(function(e){
+		e.stopPropagation();
+		var indextab = $(this).parent().index();
+		$(this).parent().siblings().removeClass('active');
+		$(this).parent().addClass('active');
+		$(this).parent().parent().parent().find('.tabsblockpage:eq('+indextab+')').addClass('active').siblings().removeClass('active');
+		});
+	$('.tabsblockpage').fancyfields();
+	$('.newssubscribefilter').fancyfields();
+	$('.eventsfilter select,.eventsfilter input[type!=text]').fancyfields();
+	$('.scroll-pane').jScrollPane({
+		showArrows: true,
+		autoReinitialise: true
+		});
+	$('#subscribe').click(function(){
+		$('#overlay').fadeIn();
+		return false;
+		});
+	$('#overlay, #closemodal').click(function(){
+		$('#overlay').fadeOut();
+		});
+	$('.modalbox').click(function(){
+		return false;
+		});
+	$('.dateui').datepicker();
+	
+	partnerlistsort($('#partners'),$(document).width());
 });
+$(window).resize(function(){
+	partnerlistsort($('#partners'),$(document).width());
+	});
 
 function changeslide(slideNum,slideNav,slideList){
 	slideNav.find('a').removeClass('active');
@@ -40,4 +75,42 @@ function nextSlide(slideNav){
 		nextNum = 0;
 		}
 	slideNav.find('a').eq(nextNum).trigger('click');
+	}
+
+function partnerlistsort(obPartners,screenWidth){
+	if(screenWidth < 1830){
+		var partnerList = '<ul class="partnerslist">';
+		$.each($('.partnerbox'),function(i,val){
+			if(i%2){
+				partnerList+='<a href="'+$('.partnerbox:eq('+i+')').attr('href')+'" class="partnerbox">'+$('.partnerbox:eq('+i+')').html()+'</a></li>';
+				}
+			else{
+				partnerList+='<li class="partnerscell"><a href="'+$('.partnerbox:eq('+i+')').attr('href')+'" class="partnerbox">'+$('.partnerbox:eq('+i+')').html()+'</a>';
+				}
+			});
+		partnerList+='</ul>'
+		obPartners.html(partnerList);
+		obPartners.jcarousel('reload',{
+			wrap: 'circular'
+		});
+		}
+	else{
+		var partnerList = '<ul class="partnerslist">';
+		$.each($('.partnerbox'),function(i,val){
+			if((i%5)==4){
+				partnerList+='<a href="'+$('.partnerbox:eq('+i+')').attr('href')+'" class="partnerbox">'+$('.partnerbox:eq('+i+')').html()+'</a></li>';
+				}
+			else if((i%5)==0){
+				partnerList+='<li class="partnerscell"><a href="'+$('.partnerbox:eq('+i+')').attr('href')+'" class="partnerbox">'+$('.partnerbox:eq('+i+')').html()+'</a>';
+				}
+			else{
+				partnerList+='<a href="'+$('.partnerbox:eq('+i+')').attr('href')+'" class="partnerbox">'+$('.partnerbox:eq('+i+')').html()+'</a>';
+				}
+			});
+		partnerList+='</ul>'
+		obPartners.html(partnerList);
+		obPartners.jcarousel('reload',{
+			wrap: 'circular'
+		});
+		}
 	}

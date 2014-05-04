@@ -1,1 +1,9 @@
-{% include 'base.html' %}
+{% extends 'base.html' %}
+
+{% block top %}
+    {% include 'partial/topblock_with_logo.html' %}
+{% endblock %}
+
+{% block middle %}
+    {% include 'partial/middleblock.html' with type=1 %}
+{% endblock %}

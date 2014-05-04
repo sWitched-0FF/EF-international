@@ -1,16 +1,38 @@
+{% if type %}
 <div class="middlecontentblock">
     <div class="promoblockspart">
-    {% block detail_page %}
-        <p><time>{{ detail_page.created }}</time></p>
-        <p>{{ detail_page.title }}</p>
-        {% block content %}
-            {{detail_page.content|safe}}
-        {% endblock %}
-        <div class="promoblock">
-            <img src="/static/images/promo4.jpg" alt="Inter food">
-        </div>
-    {% endblock %}
     </div>
     {% include 'partial/newsbar.html' %}
     {# include 'partial/partners.html' #}
 </div>
+{% else %}
+<div class="middlecontentblock">
+    <div class="sidebar">
+        <div class="topsubmenu">
+            <ul class="topsubmenulist">
+                <li><a href="#" class="topsubmenulink eventscalendaricon">Календарь событий</a></li>
+                <li><a href="#" class="topsubmenulink schemeicon">План и инфраструктура</a></li>
+                <li><a href="#" class="topsubmenulink routeicon active">Как добраться</a></li>
+            </ul>
+        </div>
+        <div class="sideblock bluebanner">
+            <section class="sideblocktext centertext">
+                <div class="clear"></div>
+            </section>
+        </div>
+        <div class="sideblock">
+        </div>
+    </div>
+    <div class="mainblock">
+        <div class="textblock">
+        {% block detail_page %}
+            <p><time>{{ detail_page.created }}</time></p>
+            <p>{{ detail_page.title }}</p>
+            {% block content %}
+                {{detail_page.content|safe}}
+            {% endblock %}
+        {% endblock %}
+        </div>
+    </div>
+</div>
+{% endif %}

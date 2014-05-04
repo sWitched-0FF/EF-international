@@ -5,9 +5,17 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/fancyfields.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="js/fancyfields-1.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.datepicker-ru.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
@@ -25,8 +33,9 @@
 			<div class="rightsection">
 				<div class="languageselect">
 					<ul>
-						<li><a href="#" class="languageicon rus">rus</a></li>
-						<li><a href="#" class="languageicon eng">eng</a></li>
+						<li><a href="#" class="languageicon ru">rus</a></li>
+						<li><a href="#" class="languageicon en">eng</a></li>
+						<li><a href="#" class="languageicon zh">chn</a></li>
 					</ul>
 				</div>
 				<div class="headersearch">
@@ -153,51 +162,37 @@
 							<p>На открытии форума «Город и цветы» главный архитектор Санкт-Петербурга Юрий  Митюрев заявил: <a href="#">«Петербургу нужны качественные ландшафтные проекты»</a></p>
 						</li>
 					</ul>
-					<a href="#" class="allnewslink newsiconblue">Читать все новости</a>
-					<form class="newssubscribe" action="#" method="post">
-						<button type="submit" name="subscribebtn">Подписаться на новости</button>
-					</form>
+					<div class="subscribeblock">
+						<a href="#" class="allnewslink newsicon">Читать все новости</a>
+						<form class="newssubscribe" action="#" method="post">
+							<button type="submit" name="subscribebtn">Подписаться на новости</button>
+						</form>
+					</div>
 				</div>
 				<div class="partnersblock">
 					<h3>Партнеры</h3>
 					<div class="partnersview" id="partners">
 						<ul class="partnerslist">
-							<li class="partnerscell">
-								<a href="#" class="partnerbox"><img src="images/partner1.png" alt="pertner1"></a>
-								<a href="#" class="partnerbox"><img src="images/partner2.png" alt="pertner2"></a>
-							</li>
-							<li class="partnerscell">
-								<a href="#" class="partnerbox"><img src="images/partner3.png" alt="pertner3"></a>
-								<a href="#" class="partnerbox"><img src="images/partner4.png" alt="pertner4"></a>
-							</li>
-							<li class="partnerscell">
-								<a href="#" class="partnerbox"><img src="images/partner5.png" alt="pertner5"></a>
-								<a href="#" class="partnerbox"><img src="images/partner6.png" alt="pertner6"></a>
-							</li>
-							<li class="partnerscell">
-								<a href="#" class="partnerbox"><img src="images/partner1.png" alt="pertner1"></a>
-								<a href="#" class="partnerbox"><img src="images/partner2.png" alt="pertner2"></a>
-							</li>
-							<li class="partnerscell">
-								<a href="#" class="partnerbox"><img src="images/partner3.png" alt="pertner3"></a>
-								<a href="#" class="partnerbox"><img src="images/partner4.png" alt="pertner4"></a>
-							</li>
-							<li class="partnerscell">
-								<a href="#" class="partnerbox"><img src="images/partner5.png" alt="pertner5"></a>
-								<a href="#" class="partnerbox"><img src="images/partner6.png" alt="pertner6"></a>
-							</li>
-							<li class="partnerscell">
-								<a href="#" class="partnerbox"><img src="images/partner1.png" alt="pertner1"></a>
-								<a href="#" class="partnerbox"><img src="images/partner2.png" alt="pertner2"></a>
-							</li>
-							<li class="partnerscell">
-								<a href="#" class="partnerbox"><img src="images/partner3.png" alt="pertner3"></a>
-								<a href="#" class="partnerbox"><img src="images/partner4.png" alt="pertner4"></a>
-							</li>
-							<li class="partnerscell">
-								<a href="#" class="partnerbox"><img src="images/partner5.png" alt="pertner5"></a>
-								<a href="#" class="partnerbox"><img src="images/partner6.png" alt="pertner6"></a>
-							</li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner1.png" alt="pertner1"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner2.png" alt="pertner2"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner3.png" alt="pertner3"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner4.png" alt="pertner4"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner5.png" alt="pertner5"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner6.png" alt="pertner6"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner1.png" alt="pertner1"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner2.png" alt="pertner2"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner3.png" alt="pertner3"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner4.png" alt="pertner4"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner1.png" alt="pertner1"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner2.png" alt="pertner2"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner3.png" alt="pertner3"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner4.png" alt="pertner4"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner1.png" alt="pertner1"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner2.png" alt="pertner2"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner3.png" alt="pertner3"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner4.png" alt="pertner4"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner5.png" alt="pertner5"></a></li>
+							<li class="partnerscell"><a href="#" class="partnerbox"><img src="images/partner6.png" alt="pertner6"></a></li>
 						</ul>
 					</div>
 					<a href="#" class="partnersnav prev" id="prevslide">&lt;</a>

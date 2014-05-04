@@ -122,7 +122,23 @@ input::-moz-placeholder {
 	width:1212px;
 	margin:0 auto;
 	}
-	
+.small{
+	font-size:0.8em;
+	}
+	h2 .small{
+		font-size:0.6em;
+		}
+.rightlink{
+	float:right;
+	}
+.pseudolink{
+	text-decoration:none;
+	border-bottom:1px dashed;
+	}
+	.pseudolink:hover{
+	text-decoration:none;
+	border-bottom:0;
+	}
 /*Header*/
 header{
 	background:#2dccd3;
@@ -162,6 +178,8 @@ header{
 		}
 		.languageselect ul:hover{
 			height:auto;
+			position:relative;
+			z-index:2;
 			}
 		.languageicon{
 			display:block;
@@ -172,11 +190,14 @@ header{
 			text-decoration:none;
 			background:url(../images/design/flags.png) 0 0 no-repeat;
 			}
-			.languageicon.rus{
+			.languageicon.ru{
 				background:url(../images/design/flags.png) 0 0 no-repeat;
 				}
-			.languageicon.eng{
+			.languageicon.en{
 				background:url(../images/design/flags.png) 0 -20px no-repeat;
+				}
+			.languageicon.zh{
+				background:url(../images/design/flags.png) 0 -40px no-repeat;
 				}
 .headersearch{
 	display:block;
@@ -240,7 +261,7 @@ header{
 	}
 .topsubmenu{
 	background:#ff8200;
-	padding:20px;
+	padding:20px 0;
 	margin:0 0 20px 0;
 	min-height:236px;
 	}
@@ -253,24 +274,27 @@ header{
 			display:block;
 			font-size:18px;
 			text-decoration:none;
-			padding:12px 0 12px 62px;
-			margin:0 0 6px 0;
+			padding:15px 20px 15px 82px;
+			margin:0 0 0 0;
 			background:url(../images/design/iconslinks.png) left 2px no-repeat;
 			}
+			.topsubmenulink.active{
+				background-color:#ff9b33;
+				}
 			.eventscalendaricon{
-				background:url(../images/design/iconslinks.png) left 2px no-repeat;
+				background:url(../images/design/iconslinks.png) 20px 5px no-repeat;
 				}
 			.schemeicon{
-				background:url(../images/design/iconslinks.png) left -56px no-repeat;
+				background:url(../images/design/iconslinks.png) 20px -53px no-repeat;
 				}
 			.routeicon{
-				background:url(../images/design/iconslinks.png) left -135px no-repeat;
+				background:url(../images/design/iconslinks.png) 20px -132px no-repeat;
 				}
 			.newsicon{
-				background:url(../images/design/iconslinks.png) left -182px no-repeat;
+				background:url(../images/design/iconslinks.png) 20px -179px no-repeat;
 				}
 			.newsiconblue{
-				background:url(../images/design/iconslinks.png) left -224px no-repeat;
+				background:url(../images/design/iconslinks.png) 20px -221px no-repeat;
 				}
 .slidernav{
 	width:290px;
@@ -353,6 +377,130 @@ header{
 				background:#9f46b1;
 				color:#ffffff;
 				}
+.mainblock{
+	margin:0 0 0 310px;
+	}
+	.textblock{
+		padding:5px 20px 15px 20px;
+		margin:0 0 20px 0;
+		background:#ffffff;
+		color:#333333;
+		overflow:hidden;
+		}
+	.textblock a{
+		color:#0072ce;
+		}
+		.maps{
+			color:#ffffff;
+			background:#f6cb05;
+			}
+			.maps a{
+				color:#ffffff;
+				}
+			.mappart{
+				padding:15px 0 5px 15px;
+				float:right;
+				}
+				.yellowbutton{
+					display:inline-block;
+					padding:5px 15px;
+					margin:4px 0;
+					min-width:167px;
+					line-height:26px;
+					color:#ffffff;
+					text-align:center;
+					font-family:arial;
+					font-weight:bold;
+					text-decoration:none;
+					border:0 none;
+					border-radius:3px;
+					background:#efa908;
+					box-shadow:0 4px 0 #eb9307;
+					cursor:pointer;
+					}
+					.yellowbutton:hover{
+						background:#ffaf30;
+						}
+				.mapbtn{
+					width:200px;
+					text-align:center;
+					}
+				.probki{
+					font-size:0.8em;
+					line-height:1.3em;
+					padding:10px 0;
+					margin:2em 0;
+					}
+					.probki .probkirate{
+						display:block;
+						margin:-10px 12px 0 0;
+						height:50px;
+						width:50px;
+						float:left;
+						font-size:2.5em;
+						line-height:50px;
+						text-align:center;
+						border-radius:50%;
+						}
+						.lvl5{
+							background:#eb9307;
+							}
+				.copasicon{
+					font-size:0.8em;
+					line-height:1.3em;
+					padding:12px 0 12px 60px;
+					background:url(../images/design/iconslinks.png) 0px -270px no-repeat;
+					}
+		.leftimg{
+			float:left;
+			margin:0 20px 5px 0;
+			}
+		.righttextblock{
+			float:left;
+			}
+		.bustime{
+			margin:0px 0 20px 80px;
+			line-height:1.3em;
+			list-style:none;
+			}
+		.busicon{
+			font-weight:900;
+			padding:2px 0 3px 49px;
+			margin:6px 0 0 0;
+			background:url(../images/design/iconstransport.png) 0px 0px no-repeat;
+			}
+		.trallicon{
+			font-weight:900;
+			padding:12px 0 3px 49px;
+			margin:6px 0 0 0;
+			background:url(../images/design/iconstransport.png) 0px -30px no-repeat;
+			}
+		.furgonicon{
+			font-weight:900;
+			padding:2px 0 3px 49px;
+			margin:6px 0 0 0;
+			background:url(../images/design/iconstransport.png) 0px -78px no-repeat;
+			}
+	.accordion{
+		border-top:1px solid #999999;
+		}
+		.accordiontitle{
+			margin:0.5em 0;
+			background:url(../images/design/arrowaccord.png) right -61px no-repeat;
+			cursor:pointer;
+			}
+		.closed .accordiontitle{
+			background:url(../images/design/arrowaccord.png) right -11px no-repeat;
+			}
+		.accordiontext{
+			border-top:1px solid #cccccc;
+			overflow:hidden;
+			padding:0 0 10px 0;
+			}
+		.closed .accordiontext{
+			display:none;
+			}
+
 .announcements{
 	background:#ff8200;
 	padding:20px 10px 10px 20px;
@@ -376,6 +524,9 @@ header{
 		display:block;
 		padding:0 0 2px 55px;
 		text-align:left;
+		}
+	.announcements .eventscalendaricon{
+		background:url(../images/design/iconslinks.png) 0 2px no-repeat;
 		}
 .infobanner{
 	background:#2dccd3;
@@ -406,6 +557,26 @@ header{
 	.bluebanner{
 		background:#0072ce;
 		}
+.sideblock{
+	margin:0 0 20px 0;
+	}
+	.sideblocktext{
+		padding:20px;
+		text-align:left;
+		font-size:1.15em;
+		}
+		.sideblocktext.centertext{
+			text-align:center;
+			}
+			.centertext .newssubscribe{
+				float:none;
+				text-align:center;
+				}
+	.sideblocktext h3{
+		margin:0 0 0.4em 0;
+		font-size:1.3em;
+		line-height:1.2em;
+		}
 .promoblockspart{
 	float:right;
 	width:596px;
@@ -424,6 +595,7 @@ header{
 	margin:0 0 20px 0;
 	padding:20px 20px 10px 20px;
 	background:#ffffff;
+	position:relative;
 	}
 	.newsbar h3{
 		color:#0072ce;
@@ -453,10 +625,162 @@ header{
 		padding:0 15px 2px 55px;
 		text-align:left;
 		}
+.news{
+	color:#ffffff;
+	background:#84bd00;
+	overflow:visible;
+	}
+	.news h2{
+		margin:0.5em 0;
+		}
+	.newslist{
+		margin:10px 0 0 0;
+		padding:0;
+		list-style:none;
+		}
+	.newstimeblock{
+		display:block;
+		width:110px;
+		padding:6px 0 0 0;
+		float:left;
+		font-size:0.9em;
+		color:#999999;
+		}
+	.newsitemtext{
+		display:block;
+		margin:0 0 20px 115px;
+		}
+		.newsitemtext h3{
+			margin:0 0 12px 0;
+			}
+.tabscontrol{
+	display:block;
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+	.tabscontrol li{
+		display:inline-block;
+		}
+	.tabscontrol a{
+		display:block;
+		padding:7px 16px;
+		min-width:87px;
+		background:#3e8c0e;
+		color:#ffffff;
+		text-decoration:none;
+		font-family:arial;
+		font-weight:bold;
+		text-align:center;
+		border:0 none;
+		border-radius:3px 3px 0 0;
+		}
+		.tabscontrol a:hover,
+		.tabscontrol .active a{
+			background:#34750c;
+			}
+.tabsblockpages{
+	display:block;
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+	.tabsblockpage{
+		display:none;
+		padding:20px;
+		background:#34750c;
+		border-radius:0 0 3px 3px;
+		}
+	.tabsblockpage.active{
+		display:block;
+		}
+.newscontrolgroup{
+	display:inline-block;
+	width:42%;
+	margin:0 2em 0 0;
+	}
+	.newscontrolgroup label{
+		width:100px;
+		display:block;
+		float:left;
+		}
+	.newscontrolgroup select{
+		width:245px;
+		}
+.multiselects{
+	width:230px;
+	height:70px;
+	float:left;
+	padding:5px;
+	background:#ffffff;
+	border-radius:3px;
+	}
+	.multiselects label{
+		float:none;
+		}
+	.multiselects fieldset{
+		height:70px;
+		}
+.paginationblock{
+	display:inline-block;
+	margin:10px auto;
+	}
+	.pageslist{
+		display:block;
+		margin:0;
+		list-style:none;
+		}
+		.pageslist li{
+			display:inline-block;
+			}
+		.pageslist a{
+			display:block;
+			padding:7px 16px;
+			margin:0 0 0 4px;
+			background:#02589b;
+			color:#ffffff;
+			text-decoration:none;
+			font-family:arial;
+			font-weight:bold;
+			border:0 none;
+			border-radius:3px;
+			box-shadow:0 4px 0 #053861;
+			}
+			.pageslist a:hover{
+				background:#0873c6;
+				}
+		.pageslist span{
+			display:block;
+			padding:7px 16px;
+			margin:0 0 0 4px;
+			background:#626464;
+			color:#b1b2b2;
+			text-decoration:none;
+			font-family:arial;
+			font-weight:bold;
+			border:0 none;
+			border-radius:3px;
+			box-shadow:0 4px 0 #525353;
+			}
+.subscribeblock{
+	padding:12px 15px 13px 15px;
+	background:#02589b;
+	overflow:hidden;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	}
+	.subscribeblock a{
+		color:#ffffff;
+		}
+	.subscribeblock .newsicon{
+		background:url(../images/design/iconslinks.png) 0 -180px no-repeat;
+		}
 .newssubscribe{
 	display:block;
 	float:left;
-	padding:7px 0 0 0;
+	padding:0;
 	text-align:left;
 	}
 	.newssubscribe input{
@@ -473,19 +797,251 @@ header{
 		margin:0 0 0 4px;
 		width:197px;
 		height:36px;
-		background:#02589b;
+		background:#064374;
 		color:#ffffff;
 		font-family:arial;
 		font-weight:bold;
 		border:0 none;
 		border-radius:3px;
-		box-shadow:0 4px 0 #024982;
+		box-shadow:0 4px 0 #053861;
 		cursor:pointer;
 		}
 		.newssubscribe button:hover{
 			background:#016abb;
 			}
-		
+.events{
+	padding:0;
+	background:transparent;
+	color:#ffffff;
+	font-size:1.1em;
+	}
+	.events h2{
+		font-size:1.7em;
+		margin: 0.2em 0 1em 0;
+		}
+	.eventsearch{
+		position:relative;
+		min-height:35px;
+		}
+		.eventsearch input{
+			padding:0px 25px 0px 5px;
+			width:666px;
+			height:30px;
+			margin:2px 0 0 0;
+			float:left;
+			line-height:30px;
+			background:#ffffff;
+			color:#666666;
+			border:0 none;
+			border-radius:3px;
+			}
+			.searchbtnicon{
+				display:block;
+				width:30px;
+				height:30px;
+				font-size:0;
+				border:0 none;
+				position:absolute;
+				right:206px;
+				top:2px;
+				cursor:pointer;
+				background:url(../images/design/iconsearchdark.png) center center no-repeat;
+				}
+		.eventsearch .bluebtn{
+			display:block;
+			padding:7px 16px;
+			float:left;
+			width:190px;
+			margin:0 0 0 14px;
+			background:#02589b;
+			color:#ffffff;
+			text-decoration:none;
+			font-family:arial;
+			font-weight:bold;
+			border:0 none;
+			border-radius:3px;
+			box-shadow:0 4px 0 #053861;
+			}
+	.eventrightblock{
+		display:block;
+		width:265px;
+		float:left;
+		padding:50px 20px 0 20px;
+		position:relative;
+		}
+		.eventtag{
+			display:block;
+			padding:4px 10px;
+			color:#ffffff;
+			font-style:italic;
+			background:#0072ce;
+			position:absolute;
+			top:-5px;
+			left:-20px;
+			}
+	.eventleftblock{
+		display:block;
+		min-height:250px;
+		margin:0 0 0 305px;
+		padding:10px 0;
+		position:relative;
+		}
+		.eventheader{
+			font-size:0.9em;
+			text-align:right;
+			margin:0 0 1.5em 0;
+			}
+			.eventheader time{
+				color:#999999;
+				float:left;
+				}
+		.eventanounce{
+			margin:0 0 5em 0;
+			}
+		.eventanounce h3{
+			color:#02589b;
+			margin:0.3em 0;
+			}
+		.eventleftblock p{
+			font-size:0.9em;
+			}
+		.eventinfo{
+			position:absolute;
+			bottom:0;
+			width:100%;
+			}
+			.eventinfo p{
+				margin:0.5em 0;
+				line-height:1.3em;
+				}
+			a.registerbtn{
+				display:block;
+				padding:7px 16px;
+				margin:0 0 0 4px;
+				background:#02589b;
+				color:#ffffff;
+				text-decoration:none;
+				font-family:arial;
+				font-weight:bold;
+				border:0 none;
+				border-radius:3px;
+				box-shadow:0 4px 0 #053861;
+				position:absolute;
+				bottom:10px;
+				right:0;
+				}
+	.eventblock.blue .eventtag{
+		background:#0072ce;
+		}
+	.eventblock.blue .eventanounce h3{
+		color:#02589b;
+		}
+	.eventblock.blue a.registerbtn{
+		background:#02589b;
+		box-shadow:0 4px 0 #053861;
+		}
+		.eventblock.blue a.registerbtn:hover{
+			background:#016bbd;
+			}
+	.eventblock.orange .eventtag{
+		background:#f7b020;
+		}
+	.eventblock.orange .eventanounce h3{
+		color:#f7b020;
+		}
+	.eventblock.orange a.registerbtn{
+		background:#f79128;
+		box-shadow:0 4px 0 #f57921;
+		}
+		.eventblock.orange a.registerbtn:hover{
+			background:#fe9f3e;
+			}
+	.eventblock.green .eventtag{
+		background:#84bd00;
+		}
+	.eventblock.green .eventanounce h3{
+		color:#84bd00;
+		}
+	.eventblock.green a.registerbtn{
+		background:#3e8c0e;
+		box-shadow:0 4px 0 #34750c;
+		}
+		.eventblock.green a.registerbtn:hover{
+			background:#50b312;
+			}
+.eventsfilter{
+	
+	}
+	.eventsfilter h4{
+		margin:0.5em 0;
+		}
+	.halfcol{
+		width:45%;
+		display:block;
+		float:left;
+		}
+		.halfcol .ffCheckboxWrapper a{
+			font-size:0.8em;
+			line-height:1.2em;
+			margin:2px 10px 0 23px;
+			color:#ffffff;
+			}
+	.eventline{
+		display:block;
+		height:2px;
+		margin:10px 20px;
+		background:#9dca33;
+		}
+	.eventdate{
+		height:40px;
+		}
+		.eventdate label{
+			float:left;
+			width:20px;
+			margin:0 12px 0 0;
+			line-height:35px;
+			}
+		.dateui{
+			padding:0px 65px 0px 5px;
+			width:146px;
+			height:30px;
+			margin:2px 0 0 0;
+			float:left;
+			line-height:30px;
+			background:url(../images/design/icondatepick.png) right -1px no-repeat #ffffff;
+			color:#666666;
+			border:0 none;
+			border-radius:3px;
+			}
+	.eventsfilter .ffSelectWrapper{
+		width:250px;
+		}
+	.eventsfilter .ffSelect > a > span{
+		color:#666666;
+		background:none #ffffff;
+		border-radius:3px 0 0 3px;
+		}
+	.eventsfilter .ffSelectMenuWrapper .ffSelectMenuMidBG li span{
+		color:#666666;
+		}
+	.eventfilterbtn{
+		display:block;
+		padding:7px 16px;
+		margin:0.5em auto 0 auto;
+		width:200px;
+		color:#ffffff;
+		text-decoration:none;
+		font-family:arial;
+		font-weight:bold;
+		border:0 none;
+		cursor:pointer;
+		border-radius:3px;
+		background:#3e8c0e;
+		box-shadow:0 4px 0 #34750c;
+		}
+		.eventfilterbtn:hover{
+			background:#50b312;
+			}
 .partnersblock{
 	width:556px;
 	height:248px;
@@ -521,11 +1077,11 @@ header{
 			float:left;
 			}
 	.partnerbox{
-		display:block;
+		display:inline-block;
 		width:160px;
 		height:80px;
 		padding:5px;
-		margin:0 0 20px 0; 
+		margin:0 16px 20px 0; 
 		border-radius:4px;
 		background:#ffffff;
 		text-align:center;
@@ -630,7 +1186,101 @@ footer{
 		.youtube{
 			background:url(../images/design/iconssocial.png) -159px 3px no-repeat;
 			}
+/*modal*/
+#overlay{
+	display:none;
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index:1001;
+	background:rgba(10,10,10,0.8);
+	}
+	.modalbox{
+		position:relative;
+		left:50%;
+		top:50%;
+		margin:-270px 0 0 -150px;
+		padding:10px 20px;
+		width:270px;
+		min-height:200px;
+		text-align:left;
+		background:#0072ce;
+		}
+		#closemodal{
+			display:block;
+			height:20px;
+			width:20px;
+			position:absolute;
+			right:10px;
+			top:10px;
+			font-size:0;
+			background:url(../images/design/closemodal.png) center center no-repeat;
+			}
+	.newssubscribefilter input{
+		padding:5px;
+		width:184px;
+		height:20px;
+		background:#ffffff;
+		color:#666666;
+		border:1px solid #0072ce;
+		border-radius:3px;
+		}
+	.newssubscribefilter button{
+		padding:5px;
+		margin:10px 0;
+		width:197px;
+		height:36px;
+		background:#02589b;
+		color:#ffffff;
+		font-family:arial;
+		font-weight:bold;
+		border:0 none;
+		border-radius:3px;
+		box-shadow:0 4px 0 #053861;
+		cursor:pointer;
+		}
+		.newssubscribe button:hover{
+			background:#016abb;
+			}
+.newssubscribefilter .ffCheckboxWrapper a{
+	color:#ffffff;
+	}
+.newssubscribefilter .newscontrolgroup label {
+	float:none;
+	width:auto;
+	margin-left:10px;
+	}
+.newssubscribefilter .newscontrolgroup{
+	width:auto;
+	margin:10px 0 10px 0;
+	}
+.newssubscribefilter .multiselects{
+	width:260px
+	}
+.newssubscribefilter .multiselects .ffCheckboxWrapper a{
+	color:#666666;
+	}
+.newssubscribefilter{}
+.newssubscribefilter{}
 /*Разные разрешения подгоняем*/
+.w1280px {
+	min-width: 1212px;
+	}
+.w1280px .container {
+	margin: 0 auto;
+	width: 1212px;
+	}
+.w1280px .column3 {
+	width: 404px;
+	}
+.w1280px .copyright{
+	width:400px;
+	}
+.w1280px .headersearch{
+	display:block;
+	}
 
 /*1024px*/
 @media only screen and (max-width: 1230px) {
@@ -668,7 +1318,7 @@ footer{
 			width:225px;
 			}
 		.newssubscribe button{
-			margin:0 0 10px 0;
+			margin:10px 0 10px 0;
 			width:235px;
 			}
 	.partnersblock{
@@ -734,6 +1384,9 @@ footer{
 		.partnerscell{
 			width:194px;
 			}
+			.partnerbox{
+				margin:0 0 12px 0;
+				}
 	.bottomnav .container,
 	footer .container{
 		width:1212px;
