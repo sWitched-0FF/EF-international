@@ -1,0 +1,28 @@
+<header>
+    <div class="container">
+        <div class="headlogo">
+            <a href="/"><img src="/static/images/design/logo.png" alt="ExpoForum"></a>
+        </div>
+        <div class="headcontacts">
+            +7 (812) <b>240-40-40</b> <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+        </div>
+        <div class="rightsection">
+            <div class="headmenu">
+                {% if user.is_authenticated %}
+                    <p>{{user}}</p>
+                    <form class="" action="{% url 'rest_framework:logout' %}?next=/" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Выйти</button>
+                    </form>
+                {% else %}
+                    <form class="" action="{% url 'rest_framework:login' %}" method="post">
+                        {% csrf_token %}
+                        <input id="id_username" class="textinput textInput" type="text" autocorrect="off" autocapitalize="off" maxlength="100" name="username" style="height: 25px" placeholder="username">
+                        <input id="id_password" class="textinput textInput" type="password" autocorrect="off" autocapitalize="off" maxlength="100" name="password" style="height: 25px" placeholder="password">
+                        <button type="submit">Войти</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>

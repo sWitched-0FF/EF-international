@@ -1,0 +1,16 @@
+<div class="middlecontentblock">
+    <div class="promoblockspart">
+    {% block detail_page %}
+        <p><time>{{ detail_page.created }}</time></p>
+        <p>{{ detail_page.title }}</p>
+        {% block content %}
+            {{detail_page.content|safe}}
+        {% endblock %}
+        <div class="promoblock">
+            <img src="/static/images/promo4.jpg" alt="Inter food">
+        </div>
+    {% endblock %}
+    </div>
+    {% include 'partial/newsbar.html' %}
+    {# include 'partial/partners.html' #}
+</div>

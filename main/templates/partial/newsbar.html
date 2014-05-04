@@ -1,0 +1,15 @@
+<div class="newsbar">
+    <h3>Новости</h3>
+    <ul class="newsbarlist">
+        {% for page in news %}
+            <li class="newsbaritem">
+                <p><time>{{page.created}}</time></p>
+                <p><a href="{{page.get_absolute_url}}" >{{page.title}}</a></p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="#" class="allnewslink newsiconblue">Читать все новости</a>
+    <form class="newssubscribe" action="#" method="post">
+        <button type="submit" name="subscribebtn">Подписаться на новости</button>
+    </form>
+</div>

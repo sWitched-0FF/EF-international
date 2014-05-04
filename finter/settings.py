@@ -1,8 +1,15 @@
+#coding: utf-8
 import os
 LOGIN_REDIRECT_URL = '/'
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'main.User'
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+LOCALHOST = '192.168.100.5'
+
+CONVERSEJS_BOSH_SERVICE_URL = 'https://{0}:5280/http-bind'.format(LOCALHOST)
 
 DATABASES = {
     'default': {
@@ -18,24 +25,27 @@ SECRET_KEY = 'jb7=&3eq!-4oj1-d2((eeub7h*x77u-8-^vm6orjo4#(!syxa)'
 
 # Application definition
 INSTALLED_APPS = (
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
 
     'bootstrap3',
-    'feincms',
-    'feincms.module.page',
-    'feincms.module.medialibrary',
+    'ckeditor',
+    'conversejs',
     'mptt',
+    'rest_framework',
     'south',
 
     'main', #site base main content
 )
 
 LANGUAGE_CODE = 'ru'
+LANGUAGES = (('ru','Russian'),)
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
@@ -62,12 +72,28 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'finter.urls'
 
+SITE_ID = 1
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'F-International',
+    'CONFIRM_UNSAVED_CHANGES': True,
+    'MENU_EXCLUDE': ('auth', 'sites'),
+}
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+CKEDITOR_UPLOAD_PATH = MEDIA_ROOT+'/uploads/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, "templates"),
 )
 
 WSGI_APPLICATION = 'finter.wsgi.application'
