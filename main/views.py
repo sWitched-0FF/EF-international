@@ -14,13 +14,24 @@ class ContextMixin(object):
             xmpp_account = XMPPAccount.objects.get(user=self.request.user.pk)
             ctx['user_jid'] = xmpp_account
         except XMPPAccount.DoesNotExist: pass
+        if Contest.objects.all().exists():
+            ctx['contest'] = Contest.objects.all().latest('pk')
+        if Ad.objects.all().exists():
+            ctx['ad'] = Ad.objects.all().latest('pk')
         ctx['news'] = News.objects.all()
         return ctx
+
 
 class IndexPage(ContextMixin, TemplateView):
     u''' Главная страница '''
     template_name = 'index.html'
 index = IndexPage.as_view()
+
+
+class NewsPage(ContextMixin, TemplateView):
+    u''' страница новостей '''
+    template_name = 'news_list.html'
+news_list = NewsPage.as_view()
 
 
 class AdsDetailPage(ContextMixin, DetailView):

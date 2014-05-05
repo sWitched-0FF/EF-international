@@ -8,5 +8,7 @@
             </li>
         {% endfor %}
     </ul>
-    <a href="#" class="allnewslink newsiconblue">Читать все новости</a>
+    <div class="subscribeblock">
+        <a href="{% url 'main:news_list' %}" class="allnewslink newsicon">Читать все новости</a>
+    </div>
 </div>

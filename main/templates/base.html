@@ -15,7 +15,8 @@
         <section>
             <div class="container">
                 {% block top %}
-                    {% include 'partial/topblock_with_logo.html' %}
+                    {# include 'partial/topblock_with_logo.html' #}
+                    {% include 'partial/simple_topblock.html' %}
                 {% endblock %}
                 {% block middle %}
                     {% include 'partial/middleblock.html' %}
@@ -36,6 +37,7 @@
         {% if request.user.is_authenticated %}
             {% conversejs_initialize %}
             {% conversejs_chatpanel %}
+            {% if user_jid %}
             <script>
                 require(['converse'], function (converse) {
                     converse.initialize({
@@ -58,6 +60,7 @@
                     });
                 });
             </script>
+            {% endif %}
         {% endif %}
         {% block extrascripts %}{% endblock %}
     </body>
