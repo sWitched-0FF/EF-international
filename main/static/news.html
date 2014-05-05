@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>ExpoForum</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/fancyfields.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="js/fancyfields-1.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.datepicker-ru.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body class="w1280px">
+	<header>
+		<div class="container">
+			<div class="headlogo">
+				<a href="/"><img src="images/design/logo.png" alt="ExpoForum"></a>
+			</div>
+			<div class="headcontacts">
+				+7 (812) <b>240-40-40</b> <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+			</div>
+			<div class="rightsection">
+				<div class="languageselect">
+					<ul>
+						<li><a href="#" class="languageicon ru">rus</a></li>
+						<li><a href="#" class="languageicon en">eng</a></li>
+						<li><a href="#" class="languageicon zh">chn</a></li>
+					</ul>
+				</div>
+				<div class="headersearch">
+					<form class="" action="#" method="post">
+						<input type="search" name="keyword" value="" placeholder="Поиск по сайту">
+						<button type="submit" class="headersearchbtn">Найти</button>
+					</form>
+				</div>
+				<div class="headmenu">
+					<ul>
+						<li><a href="#">О компании</a></li>
+						<li><a href="#">Санкт-Петербург</a></li>
+						<li><a href="#">Новости</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<div class="topcontentblock">
+				<nav class="mainnav">
+					<ul class="mainnavlist">
+						<li><a href="#" class="mainnavlink">Организаторам</a></li>
+						<li><a href="#" class="mainnavlink">Участникам</a></li>
+						<li><a href="#" class="mainnavlink">Посетителям</a></li>
+						<li><a href="#" class="mainnavlink">Прессе</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="middlecontentblock">
+				<div class="sidebar">
+					<div class="topsubmenu">
+						<ul class="topsubmenulist">
+							<li><a href="#" class="topsubmenulink eventscalendaricon">Календарь событий</a></li>
+							<li><a href="#" class="topsubmenulink schemeicon">План и инфраструктура</a></li>
+							<li><a href="#" class="topsubmenulink routeicon active">Как добраться</a></li>
+						</ul>
+					</div>
+					<div class="sideblock bluebanner">
+						<section class="sideblocktext centertext">
+							<form class="newssubscribe" action="#" method="post">
+								<button type="submit" name="subscribebtn" id="subscribe">Подписаться на новости</button>
+							</form>
+							<div class="clear"></div>
+						</section>
+					</div>
+					<div class="sideblock">
+						<img src="images/promos1.jpg" alt="Баннер">
+					</div>
+				</div>
+				<div class="mainblock">
+					<div class="textblock news">
+						<h2>Новости</h2>
+						<div class="tabsblock">
+							<ul class="tabscontrol">
+								<li class=""><a href="#">Все</a></li>
+								<li class="active"><a href="#">О компании</a></li>
+								<li class=""><a href="#">О выставках</a></li>
+							</ul>
+							<ul class="tabsblockpages">
+								<li class="tabsblockpage">
+									<form class="newsfilter">
+										<div class="newscontrolgroup">
+											<label>Выберите по названиям:</label>
+											<div class="multiselects">
+												<fieldset class="scroll-pane">
+													<input type="checkbox" name="newstitle" value="0" class="nicecheck" /><label>Агропром</label>
+													<input type="checkbox" name="newstitle" value="1" class="nicecheck" /><label>Нормы водного права</label>
+													<input type="checkbox" name="newstitle" value="2" class="nicecheck" /><label>Интерфуд</label>
+													<input type="checkbox" name="newstitle" value="3" class="nicecheck" /><label>Сельское хозяйство</label>
+												</fieldset>
+											</div>
+										</div>
+										<div class="newscontrolgroup">
+											<label>Выберите по тематике:</label>
+											<div class="multiselects">
+												<fieldset class="scroll-pane">
+													<input type="checkbox" name="newstheme" value="0" class="nicecheck" /><label>Сельское хозяйство</label>
+													<input type="checkbox" name="newstheme" value="1" class="nicecheck" /><label>Информационные технологии</label>
+													<input type="checkbox" name="newstheme" value="2" class="nicecheck" /><label>Агропром</label>
+													<input type="checkbox" name="newstheme" value="3" class="nicecheck" /><label>Нормы водного права</label>
+													<input type="checkbox" name="newstheme" value="4" class="nicecheck" /><label>Интерфуд</label>
+												</fieldset>
+											</div>
+										</div>
+									</form>
+								</li>
+								<li class="tabsblockpage active">
+									<form class="newsfilter">
+										<div class="newscontrolgroup">
+											<label>Выберите по названиям:</label>
+											<div class="multiselects">
+												<fieldset class="scroll-pane">
+													<input type="checkbox" name="newstitle" value="0" class="nicecheck" /><label>Агропром</label>
+													<input type="checkbox" name="newstitle" value="1" class="nicecheck" /><label>Нормы водного права</label>
+													<input type="checkbox" name="newstitle" value="2" class="nicecheck" /><label>Интерфуд</label>
+													<input type="checkbox" name="newstitle" value="3" class="nicecheck" /><label>Сельское хозяйство</label>
+												</fieldset>
+											</div>
+										</div>
+										<div class="newscontrolgroup">
+											<label>Выберите по тематике:</label>
+											<div class="multiselects">
+												<fieldset class="scroll-pane">
+													<input type="checkbox" name="newstheme" value="0" class="nicecheck" /><label>Сельское хозяйство</label>
+													<input type="checkbox" name="newstheme" value="1" class="nicecheck" /><label>Информационные технологии</label>
+													<input type="checkbox" name="newstheme" value="2" class="nicecheck" /><label>Агропром</label>
+													<input type="checkbox" name="newstheme" value="3" class="nicecheck" /><label>Нормы водного права</label>
+													<input type="checkbox" name="newstheme" value="4" class="nicecheck" /><label>Интерфуд</label>
+												</fieldset>
+											</div>
+										</div>
+									</form>
+								</li>
+								<li class="tabsblockpage">
+									<form class="newsfilter">
+										<div class="newscontrolgroup">
+											<label>Выберите по названиям:</label>
+											<div class="multiselects">
+												<fieldset class="scroll-pane">
+													<input type="checkbox" name="newstitle" value="0" class="nicecheck" /><label>Агропром</label>
+													<input type="checkbox" name="newstitle" value="1" class="nicecheck" /><label>Нормы водного права</label>
+													<input type="checkbox" name="newstitle" value="2" class="nicecheck" /><label>Интерфуд</label>
+													<input type="checkbox" name="newstitle" value="3" class="nicecheck" /><label>Сельское хозяйство</label>
+												</fieldset>
+											</div>
+										</div>
+										<div class="newscontrolgroup">
+											<label>Выберите по тематике:</label>
+											<div class="multiselects">
+												<fieldset class="scroll-pane">
+													<input type="checkbox" name="newstheme" value="0" class="nicecheck" /><label>Сельское хозяйство</label>
+													<input type="checkbox" name="newstheme" value="1" class="nicecheck" /><label>Информационные технологии</label>
+													<input type="checkbox" name="newstheme" value="2" class="nicecheck" /><label>Агропром</label>
+													<input type="checkbox" name="newstheme" value="3" class="nicecheck" /><label>Нормы водного права</label>
+													<input type="checkbox" name="newstheme" value="4" class="nicecheck" /><label>Интерфуд</label>
+												</fieldset>
+											</div>
+										</div>
+									</form>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="textblock">
+						<ul class="newslist">
+							<li class="newsitem">
+								<div class="newstimeblock"><time>7 марта 2014</time></div>
+								<div class="newsitemtext">
+									<h3>Мультиaмедийный экскурс в историю</h3>
+									<p>Более 150 тысяч петербуржцев постелили <a href="#">выставку «Православная Русь. Романовы. Моя история», которая прошла в Санкт-Петербурге с 16 февраля по 4 марта.</a></p>
+									<p>По мнению экспертов, такой ажиотаж вокруг экспозиции, посвященной 400-летию царского дома, вызван интересом людей к своей истории, а также нестандартным подходом к организации и проведению выставочного мероприятия.</p>
+								</div>
+							</li>
+							<li class="newsitem">
+								<div class="newstimeblock"><time>27 февраля 2014</time></div>
+								<div class="newsitemtext">
+									<h3>Рост инвестиций открывает новые горизонты</h3>
+									<p>В 2014 году <a href="#">государственные инвестиции в развитие туризма увеличились в 2 раза по сравнению с предыдущим.</a></p>
+									<p>По данным Ростуризма, из федерального бюджета на развитие туристической отрасли России в 2014 году было выделено более 4 млрд рублей, в том числе на организацию и проведение международных, общероссийских, межрегиональных туристских форумов, выставок и иных мероприятий. Это послужит определенным толчком для становления отечественной индустрии встреч, которая значительно отстает в развитии от аналогичных рынков зарубежных стран.</p>
+								</div>
+							</li>
+							<li class="newsitem">
+								<div class="newstimeblock"><time>18 февраля 2014</time></div>
+								<div class="newsitemtext">
+									<h3>Совместная работа — путь к развитию</h3>
+									<p><a href="#">Тесное взаимодействие организаторов и участников выставок в процессе подготовки отраслевых проектов свидетельствует о качественно новом подходе к их проведению.</a></p>
+									<p>Представители компаний-экспонентов активно высказывали свое мнение об эффективности участия в выставках на традиционной встрече по итогам года, организованной «ЭкспоФорум-Интернэшнл» для своих партнеров.</p>
+								</div>
+							</li>
+							<li class="newsitem">
+								<div class="newstimeblock"><time>17 февраля 2014</time></div>
+								<div class="newsitemtext">
+									<h3>«ЭкспоФорум» обретет новый образ</h3>
+									<p>С 1 марта 2014 года <a href="#">изменится визуальный стиль конгрессно-выставочного центра «Экспофорум» и компании «ЭкспоФорум-Интернэшнл».</a></p>
+									<p>Новый бренд, который теперь будет олицетворять «Экспофорум» в мировой индустрии встреч, представлен знаком Super «E», символизирующим архитектурный план конгрессно-выставочного центра «Экспофорум»: три выставочных павильона и здание конгресс-центра, образующие четыре параллельных элемента символа Super «E».</p>
+								</div>
+							</li>
+							<li class="newsitem">
+								<div class="newstimeblock"><time>7 марта 2014</time></div>
+								<div class="newsitemtext">
+									<h3>Мультиaмедийный экскурс в историю</h3>
+									<p>Более 150 тысяч петербуржцев постелили <a href="#">выставку «Православная Русь. Романовы. Моя история», которая прошла в Санкт-Петербурге с 16 февраля по 4 марта.</a></p>
+									<p>По мнению экспертов, такой ажиотаж вокруг экспозиции, посвященной 400-летию царского дома, вызван интересом людей к своей истории, а также нестандартным подходом к организации и проведению выставочного мероприятия.</p>
+								</div>
+							</li>
+							<li class="newsitem">
+								<div class="newstimeblock"><time>27 февраля 2014</time></div>
+								<div class="newsitemtext">
+									<h3>Рост инвестиций открывает новые горизонты</h3>
+									<p>В 2014 году <a href="#">государственные инвестиции в развитие туризма увеличились в 2 раза по сравнению с предыдущим.</a></p>
+									<p>По данным Ростуризма, из федерального бюджета на развитие туристической отрасли России в 2014 году было выделено более 4 млрд рублей, в том числе на организацию и проведение международных, общероссийских, межрегиональных туристских форумов, выставок и иных мероприятий. Это послужит определенным толчком для становления отечественной индустрии встреч, которая значительно отстает в развитии от аналогичных рынков зарубежных стран.</p>
+								</div>
+							</li>
+							<li class="newsitem">
+								<div class="newstimeblock"><time>18 февраля 2014</time></div>
+								<div class="newsitemtext">
+									<h3>Совместная работа — путь к развитию</h3>
+									<p><a href="#">Тесное взаимодействие организаторов и участников выставок в процессе подготовки отраслевых проектов свидетельствует о качественно новом подходе к их проведению.</a></p>
+									<p>Представители компаний-экспонентов активно высказывали свое мнение об эффективности участия в выставках на традиционной встрече по итогам года, организованной «ЭкспоФорум-Интернэшнл» для своих партнеров.</p>
+								</div>
+							</li>
+							<li class="newsitem">
+								<div class="newstimeblock"><time>17 февраля 2014</time></div>
+								<div class="newsitemtext">
+									<h3>«ЭкспоФорум» обретет новый образ</h3>
+									<p>С 1 марта 2014 года <a href="#">изменится визуальный стиль конгрессно-выставочного центра «Экспофорум» и компании «ЭкспоФорум-Интернэшнл».</a></p>
+									<p>Новый бренд, который теперь будет олицетворять «Экспофорум» в мировой индустрии встреч, представлен знаком Super «E», символизирующим архитектурный план конгрессно-выставочного центра «Экспофорум»: три выставочных павильона и здание конгресс-центра, образующие четыре параллельных элемента символа Super «E».</p>
+								</div>
+							</li>
+						</ul>
+						<div class="paginationblock">
+							<ul class="pageslist">
+								<li><span>Предыдущая</span></li>
+								<li><a href="/">1</a></li>
+								<li><a href="/" class="currentPage">2</a></li>
+								<li><a href="/">3</a></li>
+								<li><a href="/">4</a></li>
+								<li><a href="/">5</a></li>
+								<li><a href="/">6</a></li>
+								<li><a href="/">Следующая</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="bottomnav">
+		<div class="container">
+			<div class="column3">
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>О компании</b></a></li>
+					<li><a href="#">Миссия</a></li>
+					<li><a href="#">История</a></li>
+					<li><a href="#">Партнеры</a></li>
+					<li><a href="#">СМИ о нас</a></li>
+					<li><a href="#">Медиа-банк</a></li>
+					<li><a href="#">Руководство</a></li>
+					<li><a href="#">Вакансии</a></li>
+					<li><a href="#">Контакты подразделений</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Новости</b></a></li>
+					<li><a href="#">Новости компании</a></li>
+					<li><a href="#">Новости выставок</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>О Санкт-Петербурге</b></a></li>
+				</ul>
+			</div>
+			<div class="column3">
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Посетителям</b></a></li>
+					<li><a href="#">Сервисы</a></li>
+					<li><a href="#">Онлайн-регистрация на мероприятие</a></li>
+					<li><a href="#">Организация поездки</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Прессе</b></a></li>
+					<li><a href="#">Пресс-релизы</a></li>
+					<li><a href="#">Аккредитация</a></li>
+					<li><a href="#">Пресс-центр</a></li>
+					<li><a href="#">Организация поездки</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Участникам</b></a></li>
+					<li><a href="#">Общие условия участия</a></li>
+					<li><a href="#">Онлайн-заявка на участие</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Электронные каталоги</a></li>
+				</ul>
+			</div>
+			<div class="column3">
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Организаторам</b></a></li>
+					<li><a href="#">Преимущества центра</a></li>
+					<li><a href="#">Конгресс-центр</a></li>
+					<li><a href="#">Выставочные павильоны</a></li>
+					<li><a href="#">Рестораны и кафе</a></li>
+					<li><a href="#">Мероприятия</a></li>
+					<li><a href="#">Подбор помещения</a></li>
+					<li><a href="#">Онлайн-заявка на организацию мероприятия</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Документация</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Календарь событий</b></a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Как добраться</b></a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>План и инфраструктура комплекса</b></a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="copyright">
+				Экспофорум &copy; 2014
+			</div>
+			<div class="footercontacts">
+				+7 (812) 240-40-40  <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+			</div>
+			<div class="footersocial">
+				<p>Экспофорум в соцсетях:</p>
+				<ul class="sociallinks">
+					<li><a href="#" class="socialicon vkcom">vkcom</a></li>
+					<li><a href="#" class="socialicon facebook">facebook</a></li>
+					<li><a href="#" class="socialicon googleplus">googleplus</a></li>
+					<li><a href="#" class="socialicon twitter">twitter</a></li>
+					<li><a href="#" class="socialicon youtube">youtube</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<div id="overlay">
+		<div class="modalbox">
+			<a href="#" id="closemodal">x</a>
+			<p><b>Подписаться на новости</b></p>
+			<form class="newssubscribefilter">
+				<fieldset>
+					<input type="checkbox" name="newstitle" value="0" class="nicecheck" /><label>Подписаться на все новости</label>
+					<input type="checkbox" name="newstitle" value="1" class="nicecheck" /><label>Подписаться на новости о компании</label>
+					<input type="checkbox" name="newstitle" value="2" class="nicecheck" /><label>Подписаться на новости о выставках:</label>
+				</fieldset>
+				<div class="newscontrolgroup">
+					<label>Выберите по названиям:</label>
+					<div class="multiselects">
+						<fieldset class="scroll-pane">
+							<input type="checkbox" name="newstitle" value="0" class="nicecheck" /><label>Агропром</label>
+							<input type="checkbox" name="newstitle" value="1" class="nicecheck" /><label>Нормы водного права</label>
+							<input type="checkbox" name="newstitle" value="2" class="nicecheck" /><label>Интерфуд</label>
+							<input type="checkbox" name="newstitle" value="3" class="nicecheck" /><label>Сельское хозяйство</label>
+						</fieldset>
+					</div>
+				</div>
+				<div class="newscontrolgroup">
+					<label>Выберите по тематике:</label>
+					<div class="multiselects">
+						<fieldset class="scroll-pane">
+							<input type="checkbox" name="newstheme" value="0" class="nicecheck" /><label>Сельское хозяйство</label>
+							<input type="checkbox" name="newstheme" value="1" class="nicecheck" /><label>Информационные технологии</label>
+							<input type="checkbox" name="newstheme" value="2" class="nicecheck" /><label>Агропром</label>
+							<input type="checkbox" name="newstheme" value="3" class="nicecheck" /><label>Нормы водного права</label>
+							<input type="checkbox" name="newstheme" value="4" class="nicecheck" /><label>Интерфуд</label>
+						</fieldset>
+					</div>
+				</div>
+				<input type="checkbox" name="newstitle" value="0" class="nicecheck" /><label>Подписаться на календарь событий</label>
+				<input type="email" name="email" value="" placeholder="Адрес электронной почты">
+				<button type="submit" name="subscribebtn">Подписаться на новости</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

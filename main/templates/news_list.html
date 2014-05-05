@@ -1,0 +1,41 @@
+{% extends 'basecontent.html' %}
+
+{% block middle %}
+<div class="middlecontentblock">
+    <div class="sidebar">
+        <div class="announcements">
+            <h3>Ближайшие события</h3>
+            <ul class="announcementslist">
+                <li class="announcement"><time>26.08 – 01.09</time> Агрорусь</li>
+                <li class="announcement"><time>10.09 – 13.09</time> Энергетический форум</li>
+                <li class="announcement"><time>07.10 – 10.10</time> Петербургский Международный Газовый Форум 2014</li>
+                <li class="announcement"><time>15.10 – 17.10</time> Биоиндустрия 2014</li>
+                <li class="announcement"><time>15.10 – 17.10</time> Петербургский международный форум здоровья</li>
+            </ul>
+            <a href="#" class="allannouncements eventscalendaricon">Смотреть все события в календаре</a>
+        </div>
+        <div class="sideblock bluebanner">
+            <section class="sideblocktext centertext">
+                <div class="clear"></div>
+            </section>
+        </div>
+        <div class="sideblock">
+        </div>
+    </div>
+    <div class="mainblock">
+        <div class="textblock">
+        <ul class="newslist">
+            {% for n in news %}
+            <li class="newsitem">
+                <div class="newstimeblock"><time>{{n.created}}</time></div>
+                <div class="newsitemtext">
+                    <h3>{{n.tittle}}</h3>
+                    {{n.content|safe}}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
