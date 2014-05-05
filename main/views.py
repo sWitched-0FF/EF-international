@@ -28,10 +28,29 @@ class IndexPage(ContextMixin, TemplateView):
 index = IndexPage.as_view()
 
 
+class CompanyLifePage(ContextMixin, TemplateView):
+    u''' Жизнь компании '''
+    template_name = 'company_life.html'
+company_life = CompanyLifePage.as_view()
+
+
+class InfoPage(ContextMixin, TemplateView):
+    u''' Справочная информация '''
+    template_name = 'info.html'
+info = InfoPage.as_view()
+
+
 class NewsPage(ContextMixin, TemplateView):
     u''' страница новостей '''
     template_name = 'news_list.html'
 news_list = NewsPage.as_view()
+
+
+class StaffPage(ContextMixin, TemplateView):
+    u''' Сотрудники '''
+    template_name = 'staff.html'
+staff = StaffPage.as_view()
+
 
 
 class AdsDetailPage(ContextMixin, DetailView):
