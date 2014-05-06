@@ -1,16 +1,31 @@
+#coding:  utf-8
 from django.contrib import admin
 
 from suit.admin import SortableModelAdmin
 from mptt.admin import MPTTModelAdmin
 
-from .models import Ad, CompanyStructure, Contest, News, Vacation, User
+from .models import Ad, CompanyStructure, Contest, News, Vacation
 
 
-admin.site.register(Ad)
-admin.site.register(Contest)
-admin.site.register(News)
+class PageAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ('title',),}),
+        (None, {
+            'classes': ('full-width',),
+            'fields': ('content',)
+        }),
+        (None, {'fields': ('is_active', 'is_publish'),}),
+    ]
+
+    def save_model(self, request, obj, form, change):
+        obj.user = request.user
+        super(PageAdmin, self).save_model(request, obj, form, change)
+
+
+admin.site.register(Ad, PageAdmin)
+admin.site.register(Contest, PageAdmin)
+admin.site.register(News, PageAdmin)
 admin.site.register(Vacation)
-admin.site.register(User)
 
 
 class CompanyStructureAdmin(MPTTModelAdmin, SortableModelAdmin):

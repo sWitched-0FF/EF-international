@@ -1,10 +1,13 @@
 #coding: utf-8
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
 from django.views.generic import DetailView
 from django.views.generic import TemplateView
 
 from conversejs.models import XMPPAccount
 
-from .models import Ad, Contest, News
+from .models import Ad, Contest, CompanyStructure, News
 
 
 class ContextMixin(object):
@@ -49,6 +52,12 @@ news_list = NewsPage.as_view()
 class StaffPage(ContextMixin, TemplateView):
     u''' Сотрудники '''
     template_name = 'staff.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(StaffPage, self).get_context_data(**kwargs)
+        ctx['birthday_users'] = User.objects.birthday_users()
+        ctx['new_users'] = User.objects.new_users()
+        return ctx
 staff = StaffPage.as_view()
 
 

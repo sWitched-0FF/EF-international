@@ -2,7 +2,6 @@
 import datetime
 
 from django.conf import settings
-from django.contrib.auth.models import AbstractUser
 from django.core.urlresolvers import reverse
 from django.db import models
 
@@ -15,6 +14,7 @@ class Vacation(models.Model):
     start_date = models.DateField(default=datetime.date.today())
     end_date = models.DateField(default=datetime.date.today())
     is_active = models.BooleanField(default=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
 
     class Meta:
         verbose_name_plural = verbose_name = u'Отпуск'
@@ -25,6 +25,7 @@ class CompanyStructure(MPTTModel):
     parent = TreeForeignKey('self', null=True, blank=True,
                             related_name='children')
     order = models.PositiveIntegerField()
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True)
 
     class MPTTMeta:
         order_insertion_by = ('order',)
@@ -40,22 +41,13 @@ class CompanyStructure(MPTTModel):
         verbose_name_plural = verbose_name = u'Структура компании'
 
 
-class User(AbstractUser):
-    date_of_birth = models.DateField(null=True)
-    post = models.CharField(max_length=255, blank=True)
-    phone = models.CharField(max_length=255, blank=True)
-    department = models.ForeignKey(CompanyStructure, null=True)
-    vacation = models.ManyToManyField(Vacation, null=True)
-    USERNAME_FIELD = 'username'
-
-
 class AbstractPage(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     content = RichTextField()
-    title = models.CharField(max_length=255)
+    title = models.CharField(u'Заголовок', max_length=255)
     created = models.DateTimeField(auto_now_add=True)
-    is_active = models.BooleanField(default=True)
-    is_publish = models.BooleanField(default=True)
+    is_active = models.BooleanField(u'Актуально', default=True)
+    is_publish = models.BooleanField(u'Опубликовано', default=True)
 
     class Meta:
         ordering = ('-created','title','user')

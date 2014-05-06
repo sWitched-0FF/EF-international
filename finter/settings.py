@@ -3,7 +3,7 @@ import os
 LOGIN_REDIRECT_URL = '/'
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'main.User'
+AUTH_USER_MODEL = 'accounts.User'
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -31,7 +31,6 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.sites',
     'django.contrib.staticfiles',
 
     'bootstrap3',
@@ -39,8 +38,10 @@ INSTALLED_APPS = (
     'conversejs',
     'mptt',
     'rest_framework',
+    'suit_ckeditor',  
     'south',
 
+    'accounts',
     'main', #site base main content
 )
 
@@ -72,12 +73,19 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'finter.urls'
 
-SITE_ID = 1
 
 SUIT_CONFIG = {
     'ADMIN_NAME': 'F-International',
     'CONFIRM_UNSAVED_CHANGES': True,
     'MENU_EXCLUDE': ('auth', 'sites'),
+}
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Full',
+        'height': 'auto',
+        'width': 'auto',
+    },
 }
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

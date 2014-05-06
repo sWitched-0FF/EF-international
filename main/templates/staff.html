@@ -1,27 +1,60 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
+{% load mptt_tags %}
 
 {% block middle %}
 <div class="middlecontentblock">
     <div class="promoblockspart">
-        <div class="textblock">
+        <div class="textblock" style="background: none repeat scroll 0 0 #E3E3E3;">
             <h3>Доска объявлений</h3>
             <p>Находится в разработке</p>
         </div>
 
-        <div class="textblock">
+        <div class="textblock" style="background: none repeat scroll 0 0 #E3E3E3;">
             <h3>График отпусков</h3>
             <p>Находится в разработке</p>
         </div>
     </div>
+    
+    {% if birthday_users or new_users %}
+    <div class="newsbar" style="background: none repeat scroll 0 0 #FF8200; color:  #fff;">
+        {% if new_users %}
+        <h3 style="color:  #fff;">Новые сотрудники</h3>
+            <ol>
+            {% for user in new_users %}
+                <li>{{user}} <time style="color:  #fff;">{{user.date_joined}}</time></li>
+            {% endfor %}
+            </ol>
+        {% endif %}
 
-    <div class="newsbar">
-        <h3>Новые сотрудники, ДР</h3>
-        <p>Находится в разработке</p>
+        {% if birthday_users %}
+        <h3 style="color:  #fff;">ДР</h3>
+            <ol>
+            {% for user in birthday_users %}
+                <li>{{user}} <time style="color:  #fff;">{{user.date_of_birth}}</time></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
     </div>
     <div class="clear"></div>
-    <div class="newsbar">
-        <h3>Оргструктуры</h3>
-        <p>Находится в разработке</p>
+    {% endif %}
+
+    <div class="newsbar" style="background: none repeat scroll 0 0 #02589B;color:  #fff;">
+        <h3 style="color:  #fff;">Оргструктура</h3>
+        {% full_tree_for_model main.CompanyStructure as nodes %}
+        {% if nodes %}
+        <ul class="root">
+        {% recursetree nodes %}
+            <li>
+                {{ node.name }}
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endrecursetree %}
+        {% endif %}
+        </ul>
     </div>
 </div>
 {% endblock %}

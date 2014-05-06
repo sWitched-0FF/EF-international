@@ -8,83 +8,14 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'Vacation'
-        db.create_table(u'main_vacation', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('start_date', self.gf('django.db.models.fields.DateField')(default=datetime.datetime(2014, 5, 6, 0, 0))),
-            ('end_date', self.gf('django.db.models.fields.DateField')(default=datetime.datetime(2014, 5, 6, 0, 0))),
-            ('is_active', self.gf('django.db.models.fields.BooleanField')(default=True)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['accounts.User'])),
-        ))
-        db.send_create_signal(u'main', ['Vacation'])
 
-        # Adding model 'CompanyStructure'
-        db.create_table(u'main_companystructure', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('parent', self.gf('mptt.fields.TreeForeignKey')(blank=True, related_name='children', null=True, to=orm['main.CompanyStructure'])),
-            ('order', self.gf('django.db.models.fields.PositiveIntegerField')()),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['accounts.User'])),
-            (u'lft', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
-            (u'rght', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
-            (u'tree_id', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
-            (u'level', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
-        ))
-        db.send_create_signal(u'main', ['CompanyStructure'])
-
-        # Adding model 'News'
-        db.create_table(u'main_news', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['accounts.User'])),
-            ('content', self.gf('ckeditor.fields.RichTextField')()),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-            ('is_active', self.gf('django.db.models.fields.BooleanField')(default=True)),
-            ('is_publish', self.gf('django.db.models.fields.BooleanField')(default=True)),
-        ))
-        db.send_create_signal(u'main', ['News'])
-
-        # Adding model 'Ad'
-        db.create_table(u'main_ad', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['accounts.User'])),
-            ('content', self.gf('ckeditor.fields.RichTextField')()),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-            ('is_active', self.gf('django.db.models.fields.BooleanField')(default=True)),
-            ('is_publish', self.gf('django.db.models.fields.BooleanField')(default=True)),
-        ))
-        db.send_create_signal(u'main', ['Ad'])
-
-        # Adding model 'Contest'
-        db.create_table(u'main_contest', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['accounts.User'])),
-            ('content', self.gf('ckeditor.fields.RichTextField')()),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-            ('is_active', self.gf('django.db.models.fields.BooleanField')(default=True)),
-            ('is_publish', self.gf('django.db.models.fields.BooleanField')(default=True)),
-        ))
-        db.send_create_signal(u'main', ['Contest'])
-
+        # Changing field 'CompanyStructure.user'
+        db.alter_column(u'main_companystructure', 'user_id', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['accounts.User'], null=True))
 
     def backwards(self, orm):
-        # Deleting model 'Vacation'
-        db.delete_table(u'main_vacation')
 
-        # Deleting model 'CompanyStructure'
-        db.delete_table(u'main_companystructure')
-
-        # Deleting model 'News'
-        db.delete_table(u'main_news')
-
-        # Deleting model 'Ad'
-        db.delete_table(u'main_ad')
-
-        # Deleting model 'Contest'
-        db.delete_table(u'main_contest')
-
+        # Changing field 'CompanyStructure.user'
+        db.alter_column(u'main_companystructure', 'user_id', self.gf('django.db.models.fields.related.ForeignKey')(default=None, to=orm['accounts.User']))
 
     models = {
         u'accounts.user': {
@@ -146,7 +77,7 @@ class Migration(SchemaMigration):
             'parent': ('mptt.fields.TreeForeignKey', [], {'blank': 'True', 'related_name': "'children'", 'null': 'True', 'to': u"orm['main.CompanyStructure']"}),
             u'rght': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
             u'tree_id': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['accounts.User']"})
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['accounts.User']", 'null': 'True'})
         },
         u'main.contest': {
             'Meta': {'object_name': 'Contest'},
