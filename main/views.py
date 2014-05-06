@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 
 from conversejs.models import XMPPAccount
 
-from .models import Ad, Contest, CompanyStructure, News
+from .models import Ad, Contest, News, Vacation
 
 
 class ContextMixin(object):
@@ -21,6 +21,7 @@ class ContextMixin(object):
             ctx['contest'] = Contest.objects.all().latest('pk')
         if Ad.objects.all().exists():
             ctx['ad'] = Ad.objects.all().latest('pk')
+        ctx['ads'] = Ad.objects.all()
         ctx['news'] = News.objects.all()
         return ctx
 
@@ -34,6 +35,11 @@ index = IndexPage.as_view()
 class CompanyLifePage(ContextMixin, TemplateView):
     u''' Жизнь компании '''
     template_name = 'company_life.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(CompanyLifePage, self).get_context_data(**kwargs)
+        ctx['contests'] = Contest.objects.all()
+        return ctx
 company_life = CompanyLifePage.as_view()
 
 
@@ -57,6 +63,7 @@ class StaffPage(ContextMixin, TemplateView):
         ctx = super(StaffPage, self).get_context_data(**kwargs)
         ctx['birthday_users'] = User.objects.birthday_users()
         ctx['new_users'] = User.objects.new_users()
+        ctx['on_vacations'] = Vacation.objects.on_vacation_users()
         return ctx
 staff = StaffPage.as_view()
 

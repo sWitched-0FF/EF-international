@@ -6,12 +6,25 @@
     <div class="promoblockspart">
         <div class="textblock" style="background: none repeat scroll 0 0 #E3E3E3;">
             <h3>Доска объявлений</h3>
-            <p>Находится в разработке</p>
+            <ul>
+                {% for page in ads %}
+                    <li class="newsbaritem">
+                        <p><time>{{page.created}}</time></p>
+                        <p><a href="{{page.get_absolute_url}}" >{{page.title}}</a></p>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
 
         <div class="textblock" style="background: none repeat scroll 0 0 #E3E3E3;">
             <h3>График отпусков</h3>
-            <p>Находится в разработке</p>
+            <ol>
+            {% for vac in on_vacations %}
+                <li>{{vac.user}} с <time>{{vac.start_date}}</time> по <time>{{vac.end_date}}</time></li>
+            {% empty %}
+                <li></li>
+            {% endfor %}
+            </ol>
         </div>
     </div>
     

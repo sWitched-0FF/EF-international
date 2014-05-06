@@ -3,12 +3,19 @@
 {% block middle %}
 <div class="middlecontentblock">
     <div class="promoblockspart">
-        <div class="textblock">
+        <div class="textblock" style="background: none repeat scroll 0 0 #E3E3E3;">
             <h3>Доска объявлений</h3>
-            <p>Находится в разработке</p>
+            <ul>
+                {% for page in ads %}
+                    <li class="newsbaritem">
+                        <p><time>{{page.created}}</time></p>
+                        <p><a href="{{page.get_absolute_url}}" >{{page.title}}</a></p>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
 
-        <div class="textblock">
+        <div class="textblock" style="background: none repeat scroll 0 0 #E3E3E3;">
             <h3>Фото, видео</h3>
             <p>Находится в разработке</p>
         </div>
@@ -16,9 +23,16 @@
 
     {% include 'partial/newsbar.html' %}
     <div class="clear"></div>
-    <div class="newsbar">
-        <h3>Конкурсы</h3>
-        <p>Находится в разработке</p>
+    <div class="newsbar" style="background: none repeat scroll 0 0 #FF8200; color:  #fff;">
+        <h3 style="color:  #fff;">Конкурсы</h3>
+        <ul>
+            {% for page in contests %}
+                <li class="newsbaritem">
+                    <p ><time style="color:  #fff;">{{page.created}}</time></p>
+                    <p><a href="{{page.get_absolute_url}}" >{{page.title}}</a></p>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 </div>
 {% endblock %}

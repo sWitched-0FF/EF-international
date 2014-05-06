@@ -9,8 +9,10 @@ from ckeditor.fields import RichTextField
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 
+from .managers import VacationManager
 
 class Vacation(models.Model):
+    objects = VacationManager()
     start_date = models.DateField(default=datetime.date.today())
     end_date = models.DateField(default=datetime.date.today())
     is_active = models.BooleanField(default=True)

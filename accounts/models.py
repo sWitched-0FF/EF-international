@@ -17,6 +17,7 @@ class UserQuerySet(models.query.QuerySet):
                             date_of_birth__gte=self.start_date,
                             date_of_birth__lte=self.end_date,)
 
+
 class UserManager(models.Manager):
     def get_queryset(self):
         return UserQuerySet(self.model, using=self._db)
@@ -26,7 +27,6 @@ class UserManager(models.Manager):
 
     def birthday_users(self):
         return self.get_queryset().birthday_users()
-
 
 class User(AbstractUser):
     objects = UserManager()
