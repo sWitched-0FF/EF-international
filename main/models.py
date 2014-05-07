@@ -87,3 +87,16 @@ class Contest(AbstractPage):
 
     def get_absolute_url(self):
         return reverse('main:contests', kwargs=dict(pk=self.pk))
+
+
+class Calendar(AbstractPage):
+    u''' календарь событий '''
+    start_date = models.DateField(default=datetime.date.today())
+    end_date = models.DateField(default=datetime.date.today())
+    
+    class Meta:
+        verbose_name=u'Событие календаря'
+        verbose_name_plural = u'Календарь событий'
+
+    def get_absolute_url(self):
+        return reverse('main:calendar', kwargs=dict(pk=self.pk))   

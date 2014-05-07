@@ -1,5 +1,12 @@
 <div class="announcements">
     <h3>Ближайшие события</h3>
+    {% if calendar_events %}
+        <ul class="announcementslist">
+            {% for event in calendar_events %}
+            <li class="announcement"><time>{{event.start_date}} – {{event.end_date}}</time> {{event.title}}</li>
+            {% endfor%}
+        </ul>
+    {% else %}
     <ul class="announcementslist">
         <li class="announcement"><time>26.08 – 01.09</time> Агрорусь</li>
         <li class="announcement"><time>10.09 – 13.09</time> Энергетический форум</li>
@@ -7,5 +14,6 @@
         <li class="announcement"><time>15.10 – 17.10</time> Биоиндустрия 2014</li>
         <li class="announcement"><time>15.10 – 17.10</time> Петербургский международный форум здоровья</li>
     </ul>
+    {% endif %}
     <a href="#" class="allannouncements eventscalendaricon">Смотреть все события в календаре</a>
 </div>

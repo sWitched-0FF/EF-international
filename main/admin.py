@@ -4,7 +4,7 @@ from django.contrib import admin
 from suit.admin import SortableModelAdmin
 from mptt.admin import MPTTModelAdmin
 
-from .models import Ad, CompanyStructure, Contest, News, Vacation
+from .models import Ad, Calendar, CompanyStructure, Contest, News, Vacation
 
 
 class PageAdmin(admin.ModelAdmin):
@@ -22,7 +22,22 @@ class PageAdmin(admin.ModelAdmin):
         super(PageAdmin, self).save_model(request, obj, form, change)
 
 
+class CalendarPageAdmin(PageAdmin):
+    fieldsets = [
+        (None, {'fields': ('title',),}),
+        (None, {
+            'classes': ('full-width',),
+            'fields': ('content',)
+        }),
+        (None, {'fields': ( 'start_date',
+                            'end_date',
+                            'is_active',
+                            'is_publish'),
+        }),
+    ]
+
 admin.site.register(Ad, PageAdmin)
+admin.site.register(Calendar, CalendarPageAdmin)
 admin.site.register(Contest, PageAdmin)
 admin.site.register(News, PageAdmin)
 admin.site.register(Vacation)

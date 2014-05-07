@@ -1,22 +1,26 @@
 {% if type %}
 <div class="middlecontentblock">
     <div class="promoblockspart">
+        <div class="newsbar">
+            {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads bottom_color='FF8200' link='main:news_list' %}
+        </div>
+        {% comment %}
         {% if ad %}
         <div class="textblock">
             <p><time>{{ad.created}}</time> Объявление</p>
             {{ad.content|safe}}
         </div>
         {% endif %}
-
         {% if contest %}
         <div class="textblock">
             <p><time>{{contest.created}}</time> Конкурс</p>
             {{contest.content|safe}}
         </div>
         {% endif %}
+        {% endcomment %}
     </div>
     <div class="newsbar">
-        {% include 'partial/newsbar.html' with newsbar_tittle='Новости' list=news link='main:news_list' %}
+        {% include 'partial/newsbar.html' with newsbar_title='Новости' list=news link='main:news_list' %}
     </div>
     {# include 'partial/partners.html' #}
 </div>

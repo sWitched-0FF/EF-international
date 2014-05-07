@@ -9,7 +9,7 @@
         <div class="rightsection">
             <div class="headmenu">
                 {% if user.is_authenticated %}
-                    <p>{{user}}</p>
+                    <p>{{user.get_full_name}}</p>
                     <form class="" action="{% url 'rest_framework:logout' %}?next=/" method="post">
                         {% csrf_token %}
                         <button type="submit">Выйти</button>

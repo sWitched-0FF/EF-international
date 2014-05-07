@@ -34,3 +34,7 @@ class User(AbstractUser):
     post = models.CharField(max_length=255, blank=True)
     phone = models.CharField(max_length=255, blank=True)
     USERNAME_FIELD = 'username'
+
+    def get_full_name(self):
+        full_name = '%s %s' % (self.first_name, self.last_name)
+        return full_name.strip() or self.username
