@@ -4,51 +4,47 @@
 {% block middle %}
 <div class="middlecontentblock">
     <div class="promoblockspart">
-        <div class="textblock" style="background: none repeat scroll 0 0 #E3E3E3;">
-            <h3>Доска объявлений</h3>
-            <ul>
-                {% for page in ads %}
-                    <li class="newsbaritem">
-                        <p><time>{{page.created}}</time></p>
-                        <p><a href="{{page.get_absolute_url}}" >{{page.title}}</a></p>
-                    </li>
-                {% endfor %}
-            </ul>
+        <div class="newsbar">
+            {% include 'partial/newsbar.html' with newsbar_tittle='Объявления' list=ads bottom_color='E3E3E3' bottom_link_color='000' link='main:news_list' %}
         </div>
 
-        <div class="textblock" style="background: none repeat scroll 0 0 #E3E3E3;">
+
+        <div class="newsbar">
             <h3>График отпусков</h3>
             <ol>
             {% for vac in on_vacations %}
                 <li>{{vac.user}} с <time>{{vac.start_date}}</time> по <time>{{vac.end_date}}</time></li>
             {% empty %}
-                <li></li>
+                <li> --- </li>
             {% endfor %}
             </ol>
+            <div class="subscribeblock">
+            </div>
         </div>
     </div>
     
     {% if birthday_users or new_users %}
-    <div class="newsbar" style="background: none repeat scroll 0 0 #FF8200; color:  #fff;">
+    <div class="newsbar">
         {% if new_users %}
-        <h3 style="color:  #fff;">Новые сотрудники</h3>
+        <h3>Новые сотрудники</h3>
             <ol>
             {% for user in new_users %}
-                <li>{{user}} <time style="color:  #fff;">{{user.date_joined}}</time></li>
+                <li>{{user}} <time>{{user.date_joined}}</time></li>
             {% endfor %}
             </ol>
         {% endif %}
 
         {% if birthday_users %}
-        <h3 style="color:  #fff;">ДР</h3>
+        <h3>ДР</h3>
             <ol>
             {% for user in birthday_users %}
-                <li>{{user}} <time style="color:  #fff;">{{user.date_of_birth}}</time></li>
+                <li>{{user}} <time>{{user.date_of_birth}}</time></li>
             {% endfor %}
             </ul>
         {% endif %}
+        <div class="subscribeblock" style="background: none repeat scroll 0 0 #FF8200; color:  #fff;">
+        </div>
     </div>
-    <div class="clear"></div>
     {% endif %}
 
     <div class="newsbar" style="background: none repeat scroll 0 0 #02589B;color:  #fff;">

@@ -15,7 +15,9 @@
         </div>
         {% endif %}
     </div>
-    {% include 'partial/newsbar.html' %}
+    <div class="newsbar">
+        {% include 'partial/newsbar.html' with newsbar_tittle='Новости' list=news link='main:news_list' %}
+    </div>
     {# include 'partial/partners.html' #}
 </div>
 {% else %}

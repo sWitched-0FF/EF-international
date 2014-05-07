@@ -23,6 +23,7 @@ body{
 	font-size:14px;
 	line-height:20px;
 	background:#373636;
+	padding-top:80px;
 	}
 
 p,ul,ol{
@@ -143,6 +144,9 @@ input::-moz-placeholder {
 header{
 	background:#2dccd3;
 	height:80px;
+	position:fixed;
+	top:0;
+	width:100%;
 	}
 .headlogo{
 	width:290px;
@@ -1281,114 +1285,3 @@ footer{
 .w1280px .headersearch{
 	display:block;
 	}
-
-/*1024px*/
-@media only screen and (max-width: 1230px) {
-	html, body{
-		min-width:904px;
-		}
-	.container{
-		width:904px;
-		}
-	.headersearch{
-		display:none;
-		}
-	.headcontacts{
-		padding:19px 10px 12px 20px;
-		width:135px;
-		}
-	.headmenu{
-		padding:30px 10px 0 0;
-		}
-	.slidercontent{
-		width:594px;
-		}
-	#advanced{
-		display:none;
-		}
-	.newsbar{
-		width:248px;
-		height:875px;
-		}
-		.newsbarlist{
-			height:669px;
-			}
-		.newssubscribe input{
-			margin:10px 0;
-			width:225px;
-			}
-		.newssubscribe button{
-			margin:10px 0 10px 0;
-			width:235px;
-			}
-	.partnersblock{
-		margin:0 0 0 20px;
-		}
-	.column3{
-		width:290px;
-		}
-	.copyright{
-		width:281px;
-		}
-	.footercontacts{
-		width:260px;
-		}
-	.socialicon{
-		width:30px;
-		}
-} 
-
-/*1920px*/
-@media only screen and (min-width : 1830px){
-	html, body{
-		min-width:1828px;
-		}
-	.container{
-		width:1828px;
-		}
-	.topcontentblock{
-		position:relative;
-		}
-	.infobannersblock{
-		position:absolute;
-		top:0;
-		right:0;
-		width:614px;
-		height:596px;
-		}
-		.announcements{
-			width:257px;
-			margin-left:20px;
-			}
-	.newsbar{
-		width:904px;
-		height:566px;
-		}
-		.newsbarlist{
-			height:454px;
-			}
-	.partnersblock{
-		margin:0 0 0 20px;
-		width:208px;
-		height:556px;
-		float:right;
-		}
-	.partnersview{
-		width:173px;
-		height:500px;
-		margin:15px 15px 0 15px;
-		}
-		.partnerslist {
-			height:500px;
-			}
-		.partnerscell{
-			width:194px;
-			}
-			.partnerbox{
-				margin:0 0 12px 0;
-				}
-	.bottomnav .container,
-	footer .container{
-		width:1212px;
-		}
-} 
