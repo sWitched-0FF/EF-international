@@ -1285,3 +1285,10 @@ footer{
 .w1280px .headersearch{
 	display:block;
 	}
+
+#chatpanel #converse-roster a.open-chat {
+color: black;
+}
+#chatpanel .chatbox .dropdown a {
+color: black;
+}
