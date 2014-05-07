@@ -99,4 +99,4 @@ class Calendar(AbstractPage):
         verbose_name_plural = u'Календарь событий'
 
     def get_absolute_url(self):
-        return reverse('main:calendar', kwargs=dict(pk=self.pk))   
+        return reverse('main:calendar_event', kwargs=dict(pk=self.pk))   

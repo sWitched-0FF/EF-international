@@ -4,7 +4,7 @@
 <div class="middlecontentblock">
     <div class="promoblockspart">
         <div class="newsbar">
-            {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads bottom_color='E3E3E3' bottom_link_color='000' link='main:news_list' %}
+            {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads bottom_color='E3E3E3' bottom_link_color='000' link='main:ads_list' %}
         </div>
 
         <div class="newsbar" style="background: none repeat scroll 0 0 #E3E3E3;">
@@ -17,7 +17,7 @@
         {% include 'partial/newsbar.html' with newsbar_title='Новости' list=news link='main:news_list' %}
     </div>
     <div class="newsbar">
-        {% include 'partial/newsbar.html' with newsbar_title='Конкрусы' list=contests bottom_color='FF8200' link='main:news_list' %}
+        {% include 'partial/newsbar.html' with newsbar_title='Конкрусы' list=contests bottom_color='FF8200' link='main:contests_list' %}
     </div>
 </div>
 {% endblock %}
