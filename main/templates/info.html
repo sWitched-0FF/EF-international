@@ -23,7 +23,15 @@
     </div>
     <div class="newsbar">
         <h3>Телефонный справочник</h3>
-        <p>Находится в разработке</p>
+        <ul class="newsbarlist">
+            {% for user in phones_info %}
+                <li class="newsbaritem">
+                    <p>{{user.get_full_name}}({{user.post|default:'без должности'}}): {{user.phone}}</p>
+                </li>
+            {% empty%}
+            <li class="newsbaritem">Справочник пуст.</li>
+            {% endfor %}
+        </ul>
         <div class="subscribeblock" style="background: none repeat scroll 0 0 #02589B;color:  #fff;"></div>
     </div>
     <div class="newsbar">

@@ -33,7 +33,7 @@ class IndexPage(ContextMixin, TemplateView):
 
 ads_list = IndexPage.as_view(template_name='news_list.html')
 index = IndexPage.as_view()
-info = IndexPage.as_view(template_name = 'info.html')
+#info = IndexPage.as_view(template_name = 'info.html')
 news_list = IndexPage.as_view(template_name = 'news_list.html')
 calendar = IndexPage.as_view(template_name='calendar.html')
 contests_list = IndexPage.as_view(template_name='news_list.html')
@@ -48,6 +48,17 @@ class CompanyLifePage(IndexPage):
         ctx['contests'] = Contest.objects.all()
         return ctx
 company_life = CompanyLifePage.as_view()
+
+
+class InfoPage(IndexPage):
+    u''' Справочная информация '''
+    template_name = 'info.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(self.__class__, self).get_context_data(**kwargs)
+        ctx['phones_info'] = User.objects.with_phones()
+        return ctx
+info = InfoPage.as_view()
 
 
 class StaffPage(IndexPage):

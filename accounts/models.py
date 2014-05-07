@@ -17,6 +17,10 @@ class UserQuerySet(models.query.QuerySet):
                             date_of_birth__gte=self.start_date,
                             date_of_birth__lte=self.end_date,)
 
+    def with_phones(self):
+        return self.filter(phone__isnull=False
+                  ).exclude(phone__exact='')
+
 
 class UserManager(UserManager):
     def get_queryset(self):
@@ -27,6 +31,9 @@ class UserManager(UserManager):
 
     def birthday_users(self):
         return self.get_queryset().birthday_users()
+
+    def with_phones(self):
+        return self.get_queryset().with_phones()
 
 class User(AbstractUser):
     objects = UserManager()
