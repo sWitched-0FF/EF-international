@@ -36,12 +36,16 @@ INSTALLED_APPS = (
     'bootstrap3',
     'ckeditor',
     'conversejs',
+    'filer',
+    'easy_thumbnails',
+    'embed_video',
     'mptt',
     'rest_framework',
     'suit_ckeditor',  
     'south',
 
     'accounts',
+    'gallery',
     'main', #site base main content
 )
 
@@ -90,7 +94,7 @@ CKEDITOR_CONFIGS = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-CKEDITOR_UPLOAD_PATH = MEDIA_ROOT+'/uploads/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
@@ -105,3 +109,7 @@ TEMPLATE_DIRS = (
 )
 
 WSGI_APPLICATION = 'finter.wsgi.application'
+
+SOUTH_MIGRATION_MODULES = {
+        'easy_thumbnails': 'easy_thumbnails.south_migrations',
+    }

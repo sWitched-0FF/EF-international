@@ -11,6 +11,7 @@ from mptt.models import MPTTModel
 
 from .managers import VacationManager
 
+
 class Vacation(models.Model):
     objects = VacationManager()
     start_date = models.DateField(default=datetime.date.today())
@@ -93,10 +94,10 @@ class Calendar(AbstractPage):
     u''' календарь событий '''
     start_date = models.DateField(default=datetime.date.today())
     end_date = models.DateField(default=datetime.date.today())
-    
+
     class Meta:
         verbose_name=u'Событие календаря'
         verbose_name_plural = u'Календарь событий'
 
     def get_absolute_url(self):
-        return reverse('main:calendar_event', kwargs=dict(pk=self.pk))   
+        return reverse('main:calendar_event', kwargs=dict(pk=self.pk))

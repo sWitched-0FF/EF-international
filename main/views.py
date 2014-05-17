@@ -7,6 +7,8 @@ from django.views.generic import TemplateView
 
 from conversejs.models import XMPPAccount
 
+from gallery.models import ImageGallery, VideoGallery, DocsGallery
+
 from .models import Ad, Calendar, Contest, News, Vacation
 
 
@@ -46,6 +48,8 @@ class CompanyLifePage(IndexPage):
     def get_context_data(self, **kwargs):
         ctx = super(CompanyLifePage, self).get_context_data(**kwargs)
         ctx['contests'] = Contest.objects.all()
+        ctx['image_galleries'] = ImageGallery.objects.all()
+        ctx['video_galleries'] = VideoGallery.objects.all()
         return ctx
 company_life = CompanyLifePage.as_view()
 
@@ -57,6 +61,7 @@ class InfoPage(IndexPage):
     def get_context_data(self, **kwargs):
         ctx = super(self.__class__, self).get_context_data(**kwargs)
         ctx['phones_info'] = User.objects.with_phones()
+        ctx['docs_galleries'] = DocsGallery.objects.all()
         return ctx
 info = InfoPage.as_view()
 

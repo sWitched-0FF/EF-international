@@ -4,7 +4,8 @@ from django.contrib import admin
 from suit.admin import SortableModelAdmin
 from mptt.admin import MPTTModelAdmin
 
-from .models import Ad, Calendar, CompanyStructure, Contest, News, Vacation
+from .models import Ad, Calendar, CompanyStructure, Contest
+from .models import News, Vacation
 
 
 class PageAdmin(admin.ModelAdmin):
@@ -41,7 +42,6 @@ admin.site.register(Calendar, CalendarPageAdmin)
 admin.site.register(Contest, PageAdmin)
 admin.site.register(News, PageAdmin)
 admin.site.register(Vacation)
-
 
 class CompanyStructureAdmin(MPTTModelAdmin, SortableModelAdmin):
     mptt_level_indent = 20
