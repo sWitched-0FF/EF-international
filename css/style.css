@@ -36,7 +36,7 @@ p,ul,ol{
 	}
 ul,ol{
 	padding:0 0 0 0px;
-	margin:0 0 1em 1.5em;
+	margin:0 0 1em 2em;
 	}
 
 h1,h2,h3,h4,h5,h6{
@@ -720,7 +720,8 @@ header{
 	.bottomblock .newsicon{
 		background:url(../images/design/iconslinks.png) 0 -180px no-repeat;
 		}
-.scheme{
+.scheme,
+.newstaff{
 	margin:0 20px 20px 0;
 	}
 	.scheme h3{
@@ -748,16 +749,41 @@ header{
 		float:left;
 		background:url(../images/design/iconslinks.png) 10px -68px no-repeat;
 		}
+	.newstaff .stafficon{
+		display:block;
+		width:150px;
+		margin:5px 0;
+		padding:5px 20px 10px 70px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 10px -769px no-repeat;
+		}
+	.newstafflist{
+		list-style:none;
+		margin:1em 0;
+		}
+	.newstaffitem{
+		margin:0 0 0.5em 0;
+		}
+	.newstaffitem p{
+		margin:0;
+		}
+	.newstaffitem time{
+		color:#999999;
+		font-style:italic;
+		}
 .doctemplates{
 	
 	}
 	.doctemplates h3,
-	.photoarchive h3{
+	.photoarchive h3,
+	.vacationgraph h3{
 		color:#ffcc00;
 		margin:0;
 		}
 	.doctemplates .bottomblock,
-	.photoarchive .bottomblock{
+	.photoarchive .bottomblock,
+	.vacationgraph .bottomblock{
 		background:#ffcc00;
 		}
 	.doctemplates .docicon{
@@ -778,6 +804,15 @@ header{
 		float:left;
 		background:url(../images/design/iconslinks.png) 11px -653px no-repeat;
 		}
+	.vacationgraph .vacationicon{
+		display:block;
+		width:150px;
+		margin:0;
+		padding:8px 20px 8px 68px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 11px -870px no-repeat;
+		}
 	.doctemplates .documentitem{
 		padding:0px 0px 4px 60px;
 		height:71px;
@@ -787,16 +822,32 @@ header{
 		font-size:0.9em;
 		line-height:1.35em;
 		}
+	.vacationlist{
+		list-style:none;
+		margin:1em 0;
+		}
+	.vacationitem{
+		margin:0 0 0.5em 0;
+		}
+	.vacationitem p{
+		margin:0;
+		}
+	.vacationitem time{
+		font-weight:600;
+		}
 .phonebook,
-.contest{
+.contest,
+.orgstrukture{
 	margin:0 20px 20px 0;
 	}
-	.phonebook h3{
+	.phonebook h3,
+	.orgstrukture h3{
 		color:#d30303;
 		margin:0;
 		}
 	.phonebook .bottomblock,
-	.contest .bottomblock{
+	.contest .bottomblock,
+	.orgstrukture .bottomblock{
 		background:#d30303;
 		}
 	.phonebook .phoneicon{
@@ -817,6 +868,15 @@ header{
 		float:left;
 		background:url(../images/design/iconslinks.png) 10px -600px no-repeat;
 		}
+	.orgstrukture .orgstruktureicon{
+		display:block;
+		width:110px;
+		margin:3px 0;
+		padding:5px 20px 5px 68px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 10px -820px no-repeat;
+		}
 	.phonebook .phonebooklist{
 		list-style:none;
 		margin:1em 0;
@@ -827,8 +887,6 @@ header{
 	.phonebook .phonename{
 		display:inline-block;
 		width:45%;
-		}
-	.phonebook .phonenumber{
 		}
 .mediaarchive{
 	
@@ -1673,4 +1731,13 @@ footer{
 	width:30%;
 	margin:0 2% 0 0;
 	float:left;
+	}
+.nomarker{
+	list-style:none;
+	}
+	.nomarker li{
+		margin:0.3em 0;
+		}
+.nomargin{
+	margin-left:0;
 	}
