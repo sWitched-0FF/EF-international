@@ -687,15 +687,151 @@ header{
 		width:596px;
 		margin:0 0 20px 0;
 		}
-.newsbar{
+.mediablock{
 	color:#333333;
-	width:556px;
+	width:546px;
 	height:258px;
 	float:left;
 	margin:0 0 20px 0;
-	padding:20px 20px 10px 20px;
+	padding:20px 20px 10px 30px;
 	background:#ffffff;
 	position:relative;
+	}
+	.mediablock a{
+		color:#0072ce;
+		}
+.mediablock .bottomblock{
+	padding:5px 15px 5px 15px;
+	height:60px;
+	background:#02589b;
+	overflow:hidden;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	}
+	.mediablock .bottomblock a{
+		color:#ffffff;
+		}
+	.bottomblock .newsicon{
+		background:url(../images/design/iconslinks.png) 0 -180px no-repeat;
+		}
+.scheme{
+	margin:0 20px 20px 0;
+	}
+	.scheme h3{
+		color:#0072ce;
+		margin:0;
+		}
+	.schemelist{
+		list-style:none;
+		margin:1.5em 0;
+		}
+		.schemelist li{
+			margin:0.4em 0;
+			white-space:nowrap;
+			font-size:0.9em;
+			}
+	.scheme .bottomblock{
+		background:#02589b;
+		}
+	.scheme .schemeicon{
+		display:block;
+		width:70px;
+		margin:8px 0;
+		padding:0 20px 0 70px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 10px -68px no-repeat;
+		}
+.doctemplates{
+	
+	}
+	.doctemplates h3{
+		color:#ffcc00;
+		margin:0;
+		}
+	.doctemplates .bottomblock{
+		background:#ffcc00;
+		}
+	.doctemplates .docicon{
+		display:block;
+		width:150px;
+		margin:0;
+		padding:8px 20px 8px 68px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 10px -378px no-repeat;
+		}
+	.doctemplates .documentitem{
+		padding:0px 0px 4px 60px;
+		height:71px;
+		margin:0 10px 0 -10px;
+		width:39%;
+		float:left;
+		font-size:0.9em;
+		line-height:1.35em;
+		}
+.phonebook{
+	margin:0 20px 20px 0;
+	}
+	.phonebook h3{
+		color:#d30303;
+		margin:0;
+		}
+	.phonebook .bottomblock{
+		background:#d30303;
+		}
+	.phonebook .phoneicon{
+		display:block;
+		width:170px;
+		margin:3px 0;
+		padding:5px 20px 5px 68px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 10px -435px no-repeat;
+		}
+	.phonebook .phonebooklist{
+		list-style:none;
+		margin:1em 0;
+		}
+	.phonebook .phonebooklist li{
+		margin:0.4em 0;
+		}
+	.phonebook .phonename{
+		display:inline-block;
+		width:45%;
+		}
+	.phonebook .phonenumber{
+		}
+.mediaarchive{
+	
+	}
+	.mediaarchive h3{
+		color:#96c221;
+		margin:0;
+		}
+	.mediaarchive .bottomblock{
+		background:#96c221;
+		}
+	.mediaarchive .mediaicon{
+		display:block;
+		width:150px;
+		margin:0;
+		padding:8px 20px 8px 68px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 10px -488px no-repeat;
+		}
+	.mediaarchivelist{
+		list-style:none;
+		margin:1em 0;
+		}
+	.mediaarchiveitem{
+		margin:0 0 2em 0;
+		}
+.newsbar{
+
 	}
 	.newsbar h3{
 		color:#0072ce;
@@ -1470,4 +1606,16 @@ footer{
 	}
 .newssubscribefilter .multiselects .ffCheckboxWrapper a{
 	color:#666666;
+	}
+.col2{
+	display:block;
+	width:47%;
+	margin:0 2% 0 0;
+	float:left;
+	}
+.col3{
+	display:block;
+	width:30%;
+	margin:0 2% 0 0;
+	float:left;
 	}
