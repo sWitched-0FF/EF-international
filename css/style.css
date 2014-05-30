@@ -405,7 +405,7 @@ header{
 		display:inline-block;
 		list-style:none;
 		margin:0;
-		padding:0;
+		padding:0 20px;
 		background:#87189d;
 		}
 	.mainnavlist li{
@@ -415,7 +415,7 @@ header{
 			display:inline-block;
 			font-size:24px;
 			text-decoration:none;
-			padding:30px;
+			padding:30px 20px;
 			height:20px;
 			background:#87189d;
 			}
@@ -710,6 +710,10 @@ header{
 	left:0;
 	right:0;
 	}
+	.mediablock h3{
+		color:#0072ce;
+		margin:0;
+		}
 	.mediablock .bottomblock a{
 		color:#ffffff;
 		}
@@ -747,11 +751,13 @@ header{
 .doctemplates{
 	
 	}
-	.doctemplates h3{
+	.doctemplates h3,
+	.photoarchive h3{
 		color:#ffcc00;
 		margin:0;
 		}
-	.doctemplates .bottomblock{
+	.doctemplates .bottomblock,
+	.photoarchive .bottomblock{
 		background:#ffcc00;
 		}
 	.doctemplates .docicon{
@@ -763,6 +769,15 @@ header{
 		float:left;
 		background:url(../images/design/iconslinks.png) 11px -378px no-repeat;
 		}
+	.photoarchive .photoicon{
+		display:block;
+		width:150px;
+		margin:0;
+		padding:8px 20px 8px 68px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 11px -653px no-repeat;
+		}
 	.doctemplates .documentitem{
 		padding:0px 0px 4px 60px;
 		height:71px;
@@ -772,14 +787,16 @@ header{
 		font-size:0.9em;
 		line-height:1.35em;
 		}
-.phonebook{
+.phonebook,
+.contest{
 	margin:0 20px 20px 0;
 	}
 	.phonebook h3{
 		color:#d30303;
 		margin:0;
 		}
-	.phonebook .bottomblock{
+	.phonebook .bottomblock,
+	.contest .bottomblock{
 		background:#d30303;
 		}
 	.phonebook .phoneicon{
@@ -790,6 +807,15 @@ header{
 		text-align:left;
 		float:left;
 		background:url(../images/design/iconslinks.png) 10px -435px no-repeat;
+		}
+	.contest .contesticon{
+		display:block;
+		width:110px;
+		margin:3px 0;
+		padding:5px 20px 5px 68px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 10px -600px no-repeat;
 		}
 	.phonebook .phonebooklist{
 		list-style:none;
@@ -807,11 +833,13 @@ header{
 .mediaarchive{
 	
 	}
-	.mediaarchive h3{
+	.mediaarchive h3,
+	.bulletinboard h3{
 		color:#96c221;
 		margin:0;
 		}
-	.mediaarchive .bottomblock{
+	.mediaarchive .bottomblock,
+	.bulletinboard .bottomblock{
 		background:#96c221;
 		}
 	.mediaarchive .mediaicon{
@@ -823,6 +851,15 @@ header{
 		float:left;
 		background:url(../images/design/iconslinks.png) 10px -488px no-repeat;
 		}
+	.bulletinboard .bulletinicon{
+		display:block;
+		width:150px;
+		margin:0;
+		padding:8px 20px 8px 68px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 11px -542px no-repeat;
+		}
 	.mediaarchivelist{
 		list-style:none;
 		margin:1em 0;
@@ -830,8 +867,28 @@ header{
 	.mediaarchiveitem{
 		margin:0 0 2em 0;
 		}
+.videoarchive{
+	margin:0 auto 20px auto;
+	float:none;
+	}
+	.videoarchive h3{
+		color:#2dccd3;
+		margin:0;
+		}
+	.videoarchive .bottomblock{
+		background:#2dccd3;
+		}
+	.videoarchive .videoicon{
+		display:block;
+		width:70px;
+		margin:3px 0;
+		padding:5px 20px 10px 70px;
+		text-align:left;
+		float:left;
+		background:url(../images/design/iconslinks.png) 10px -710px no-repeat;
+		}
 .newsbar{
-
+	margin:0 20px 20px 0;
 	}
 	.newsbar h3{
 		color:#0072ce;
@@ -856,6 +913,7 @@ header{
 			}
 	.allnewslink{
 		display:block;
+		margin:8px 0 8px 15px;
 		float:left;
 		width:85px;
 		padding:0 15px 2px 55px;
