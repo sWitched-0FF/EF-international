@@ -1,66 +1,28 @@
 ﻿{% extends 'basecontent.html' %}
-
 {% block middle %}
 <div class="middlecontentblock">
     {% block sidebar %}
     <div class="sidebar">
         {% include 'partial/announcements.html' %}
-        <div class="sideblock bluebanner">
-            <section class="sideblocktext centertext">
-                <div class="clear"></div>
-            </section>
-        </div>
-        <div class="sideblock">
-        </div>
     </div>
     {% endblock %}
     <div class="mainblock">
-        <div class="textblock events">
-            <h2>Календарь событий</h2>
-        </div>
+        <h2>Календарь событий</h2>
         {% for event in calendar_events %}
-        <div class="textblock eventblock blue">
-            <div class="eventrightblock">
-                <span class="eventtag">{{event.pk}}</span>
-                <a href="{{event.get_absolute_url}}"><img src="images/event1.jpg" alt="event"></a>
-            </div>
+        <div class="textblock eventblock {{clrs|random}}">
             <div class="eventleftblock">
                 <div class="eventheader">
                     <time>{{event.start_date}} – {{event.end_date}}</time>
-                    {#<b>Добавить событие:</b> <a href="#">в Google-календарь</a> <a href="#">в Outlook</a>#}
                 </div>
                 <div class="eventanounce">
                     <h3>{{event.title}}</h3>
                     {{event.content|safe}}
                 </div>
-                {% comment %}
-                <div class="eventinfo">
-                    <p><b>Место проведения:</b> «Ленэкспо», Большой пр. В. О., д. 103, павильон №7, 8А</p>
-                    <p><b>Организатор:</b> Экспофорум</p>
-                    <p><b>Сайт выставки:</b> <a href="#">www.ptfair.ru</a></p>
-                    <a href="#" class="registerbtn">Зарегистрироваться</a>
-                </div>
-                {% endcomment %}
             </div>
         </div>
         {% empty %}
             События отсутствуют
         {% endfor %}
-        {% comment %}
-        <div class="paginationblock">
-            <ul class="pageslist">
-                <li><span>Предыдущая</span></li>
-                <li><a href="/">1</a></li>
-                <li><a href="/" class="currentPage">2</a></li>
-                <li><a href="/">3</a></li>
-                <li><a href="/">4</a></li>
-                <li><a href="/">5</a></li>
-                <li><a href="/">6</a></li>
-                <li><a href="/">Следующая</a></li>
-            </ul>
-        </div>
-        <div class="clear"><br/></div>
-        {% endcomment %}
     </div>
 </div>
 {% endblock %}

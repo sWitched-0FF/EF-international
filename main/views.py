@@ -4,6 +4,7 @@ User = get_user_model()
 
 from django.views.generic import DetailView
 from django.views.generic import TemplateView
+from django.views.generic.list import ListView
 
 from conversejs.models import XMPPAccount
 
@@ -26,19 +27,28 @@ class ContextMixin(object):
         ctx['ads'] = Ad.objects.all()
         ctx['news'] = News.objects.all()
         ctx['calendar_events'] = Calendar.objects.all()
+        ctx['clrs'] = ('blue','green','orange')
         return ctx
 
 
 class IndexPage(ContextMixin, TemplateView):
     u''' Главная страница '''
     template_name = 'index.html'
-
-ads_list = IndexPage.as_view(template_name='news_list.html')
 index = IndexPage.as_view()
-#info = IndexPage.as_view(template_name = 'info.html')
-news_list = IndexPage.as_view(template_name = 'news_list.html')
 calendar = IndexPage.as_view(template_name='calendar.html')
-contests_list = IndexPage.as_view(template_name='news_list.html')
+
+class ListPage(ContextMixin, ListView):
+    model = News
+    paginate_by = 10
+    template_name = 'list.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(ListPage, self).get_context_data(**kwargs)
+        ctx['title'] = self.model._meta.verbose_name_plural
+        return ctx    
+news_list = ListPage.as_view()
+ads_list = ListPage.as_view(model=Ad)
+contests_list = ListPage.as_view(model=Contest)
 
 
 class CompanyLifePage(IndexPage):

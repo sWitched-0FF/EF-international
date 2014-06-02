@@ -1,13 +1,12 @@
 #coding: utf-8
-from main.views import DetailPage, IndexPage
+from main.views import DetailPage, ListPage
 
 from .models import ImageGallery, VideoGallery, DocsGallery
-#from .models import Image, Video, DocFile
 
 
-image_gallery_list = IndexPage.as_view(template_name='news_list.html')
-video_gallery_list = IndexPage.as_view(template_name='news_list.html')
-docs_gallery_list = IndexPage.as_view(template_name='news_list.html')
+image_gallery_list = ListPage.as_view(model=ImageGallery)
+video_gallery_list = ListPage.as_view(model=VideoGallery)
+docs_gallery_list = ListPage.as_view(model=DocsGallery)
 
 image_gallery = DetailPage.as_view( model=ImageGallery,
                                     template_name='image_gallery.html')
