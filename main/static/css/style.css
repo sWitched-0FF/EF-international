@@ -255,6 +255,64 @@ header{
 .topcontentblock{
 	margin:20px 0;
 	}
+	.topcontentblock .announcements{
+		padding:12px 10px 10px 20px;
+		min-height:252px;
+		float:none;
+		}
+		.topcontentblock .announcements .announcementslist{
+			height:160px;
+			min-height: 160px;
+			overflow-y:auto;
+			}
+.slidernav{
+	width:290px;
+	height:300px;
+	margin:20px 20px 20px 0;
+	background:#282828;
+	}
+	.slidernavlist{
+		display:block;
+		margin:0;
+		padding:0;
+		list-style:none;
+		}
+		.slidernavlink{
+			display:block;
+			padding:40px 20px 30px 30px;
+			font-size:20px;
+			text-decoration:none;
+			height:30px;
+			vertical-align:middle;
+			}
+		.slidernavlink.long{
+			padding:30px 20px 30px 30px;
+			height:40px;
+			}
+		.slidernavlink:hover,
+		.slidernavlink.active{
+			background:url(../images/design/leftarr.png) right center no-repeat #666666;
+			margin:0 -20px 0 0;
+			padding:40px 40px 30px 30px;
+			}
+		.slidernavlink.long:hover,
+		.slidernavlink.long.active{
+			background:url(../images/design/leftarr.png) right center no-repeat #666666;
+			margin:0 -20px 0 0;
+			padding:30px 40px 30px 30px;
+			}
+.slidercontent{
+	width:902px;
+	height:596px;
+	overflow:hidden;
+	float:left;
+	}
+	.slidercontentlist{
+		display:block;
+		padding:0;
+		margin:0;
+		list-style:none;
+		}
 .sidebar{
 	width:290px;
 	float:left;

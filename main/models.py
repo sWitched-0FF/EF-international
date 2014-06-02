@@ -63,12 +63,10 @@ class AbstractPage(models.Model):
 class News(AbstractPage):
     u''' Новости портала '''
     class Meta:
+        ordering = ('-created','title','user')
         verbose_name=u'Новость'
         verbose_name_plural = u'Новости'
 
-    class Meta:
-        ordering = ('-created','title','user')
-        
     def get_absolute_url(self):
         return reverse('main:news', kwargs=dict(pk=self.pk))
 
