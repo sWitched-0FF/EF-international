@@ -2,14 +2,93 @@
 
 {% block middle %}
 <div class="middlecontentblock">
+    <div class="mediablock scheme">
+        <h3>Интерактивный план комплекса</h3>
+        <ul class="schemelist col3">
+            <li><a href="#">Павильон №1</a></li>
+            <li><a href="#">Павильон №2</a></li>
+            <li><a href="#">Павильон №3</a></li>
+            <li><a href="#">Павильон №4</a></li>
+            <li><a href="#">Павильон №5</a></li>
+            <li><a href="#">Павильон №5а</a></li>
+        </ul>
+        <ul class="schemelist col3">
+            <li><a href="#">Зал конгрессов</a></li>
+            <li><a href="#">Зал «Петровский»</a></li>
+            <li><a href="#">Зал 5-2</a></li>
+            <li><a href="#">Зал 5-3</a></li>
+            <li><a href="#">Зал 6-1</a></li>
+            <li><a href="#">Зал 6-2</a></li>
+        </ul>
+        <ul class="schemelist col3">
+            <li><a href="#">Кассы и зона регистрации</a></li>
+            <li><a href="#">Администрация ОАО «Ленэкспо»</a></li>
+            <li><a href="#">Мед. пункт</a></li>
+            <li><a href="#">Кафе, ресторан</a></li>
+            <li><a href="#">WC</a></li>
+            <li><a href="#">Парковка</a></li>
+        </ul>
+        <div class="bottomblock">
+            <a href="#" class="schemeicon">Смотреть весь план</a>
+        </div>
+    </div>
+    <div class="mediablock doctemplates">
+        <h3>Шаблоны документов</h3>
+        <ul class="documentslist">
+            <li class="documentitem pdf">
+                <a href="#">Презентация КВЦ Экспофорум<br/>(PDF, 3 Мб)</a>
+            </li>
+            <li class="documentitem xls">
+                <a href="#">Прайс копоративного обслуживания во время проведения круглого стола<br/>(XLS, 50 Кб)</a>
+            </li>
+            <li class="documentitem doc">
+                <a href="#">Проект договора аренды площади КВЦ Экспофорум<br/>(DOC, 35 Кб)</a>
+            </li>
+            <li class="documentitem docx">
+                <a href="#">Постановление о максимальной стоимости квадратного метра КВЦ Экспофорум<br/>(DOCX, 35 Кб)</a>
+            </li>
+        {% for page in docs_galleries %}
+            <li class="documentitem ">
+                <a href="{{page.get_absolute_url}}" >{{page.title}}<br/>({{file.type}}, {{file.size}})</a>
+            </li>
+        {% endfor %}
+        </ul>
+        <div class="bottomblock">
+            <a href="{% url 'gallery:docs_gallery_list' %}" class="docicon">Смотреть все шаблоны документов</a>
+        </div>
+    </div>
+    <div class="mediablock phonebook">
+        <h3>Телефонный справочник</h3>
+        <ul class="phonebooklist">
+            <li><span class="phonename">Кассы и зона регистрации</span><span class="phonenumber">+7 (812) 240-40-40</span></li>
+            <li><span class="phonename">Администрация ОАО «Ленэкспо»</span><span class="phonenumber">+7 (812) 240-40-40</span></li>
+            <li><span class="phonename">Мед. пункт</span><span class="phonenumber">+7 (812) 240-40-40</span></li>
+            <li><span class="phonename">Кафе, ресторан</span><span class="phonenumber">+7 (812) 240-40-40</span></li>
+            <li><span class="phonename">Парковка</span><span class="phonenumber">+7 (812) 240-40-40</span></li>
+        </ul>
+        <div class="bottomblock">
+            <a href="#" class="phoneicon">Смотреть весь телефонный справочник</a>
+        </div>
+    </div>
+    <div class="mediablock mediaarchive">
+        <h3>Медиаархив</h3>
+        <ul class="mediaarchivelist">
+            {% for page in video_galleries %}
+                <li class="mediaarchiveitem">
+                    <h4><a href="{{page.get_absolute_url}}" class="pseudolink">{{page.title}}</a></h4>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="bottomblock">
+            <a href="{% url 'gallery:video_gallery_list' %}" class="mediaicon">Смотреть весь медиаархив</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+{% comment %}
     <div class="promoblockspart">
         <div class="newsbar">
             {% include 'partial/newsbar.html' with newsbar_title='Шаблоны документов' list=docs_galleries bottom_color='E3E3E3' bottom_link_color='000' link='gallery:docs_gallery_list' %}
-        </div>
-        <div class="newsbar">
-            <h3>Шаблоны документов</h3>
-            <p>Находится в разработке</p>
-            <div class="subscribeblock" style="background: none repeat scroll 0 0 #E3E3E3;"></div>
         </div>
 
         <div class="newsbar">
@@ -42,6 +121,6 @@
         <p>Находится в разработке</p>
         <div class="subscribeblock"></div>
     </div>
-
+{% endcomment %}
 </div>
 {% endblock %}

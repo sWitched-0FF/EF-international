@@ -15,7 +15,6 @@
         <section>
             <div class="container">
                 {% block top %}
-                    {# include 'partial/topblock_with_logo.html' #}
                     {% include 'partial/simple_topblock.html' %}
                 {% endblock %}
                 {% block middle %}
@@ -24,11 +23,6 @@
             </div>
         </section>
 
-        {% block bottom %}
-        <section class="bottomnav">
-            {# include 'partial/bottomnav.html' #}
-        </section>
-        {% endblock %}
 
         {% block footer %}
             {% include 'partial/footer.html' %}

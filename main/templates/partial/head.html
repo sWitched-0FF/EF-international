@@ -1,19 +1,26 @@
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+
 {% load conversejs %}
 <head>
-    <title>ExpoForum</title>
+    <title>F-International</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="/static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.jcarousel.min.js"></script>
-    <script type="text/javascript" src="/static/js/fancyfields-1.2.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.mousewheel.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.jscrollpane.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery-ui-1.10.4.custom.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.ui.datepicker-ru.js"></script>
-    {#<script type="text/javascript" src="/static/js/main.js"></script>#}
+    <link href="{{STATIC_PREFIX}}css/style.css" rel="stylesheet" type="text/css" />
+    <link href="{{STATIC_PREFIX}}css/fancyfields.css" rel="stylesheet" type="text/css" />
+    <link href="{{STATIC_PREFIX}}css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+    <link href="{{STATIC_PREFIX}}css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}js/fancyfields-1.2.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery.ui.datepicker-ru.js"></script>
+    <script type="text/javascript" src="{{STATIC_PREFIX}}js/main.js"></script>
     <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
+        <script src="{{STATIC_PREFIX}}js/html5shiv.js"></script>
     <![endif]-->
     {% conversejs_static %}
 </head>

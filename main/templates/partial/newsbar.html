@@ -1,12 +1,12 @@
 <h3>{{newsbar_title}}</h3>
 <ul class="newsbarlist">
     {% for page in list %}
-        <li class="newsbaritem">
+        <li class="{% if item_class%}{{item_class}}{%else%}newsbaritem{%endif%}">
             <p><time>{{page.created}}</time></p>
             <p><a href="{{page.get_absolute_url}}" >{{page.title}}</a></p>
         </li>
     {% endfor %}
 </ul>
-<div class="subscribeblock" {% if bottom_color %}style="background: none repeat scroll 0 0 #{{bottom_color}};"{% endif %}>
-    <a href="{% url link %}" class="allnewslink newsicon" {% if bottom_link_color %}style="color: #{{bottom_link_color}};"{% endif %}>Читать все {{newsbar_title|lower}}</a>
+<div class="bottomblock">
+    <a href="{% url link %}" class="{{icon}}">Читать все {{newsbar_title|lower}}</a>
 </div>

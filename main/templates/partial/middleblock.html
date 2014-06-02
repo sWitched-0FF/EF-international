@@ -1,28 +1,12 @@
 {% if type %}
 <div class="middlecontentblock">
-    <div class="promoblockspart">
-        <div class="newsbar">
-            {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads bottom_color='FF8200' link='main:ads_list' %}
-        </div>
-        {% comment %}
-        {% if ad %}
-        <div class="textblock">
-            <p><time>{{ad.created}}</time> Объявление</p>
-            {{ad.content|safe}}
-        </div>
-        {% endif %}
-        {% if contest %}
-        <div class="textblock">
-            <p><time>{{contest.created}}</time> Конкурс</p>
-            {{contest.content|safe}}
-        </div>
-        {% endif %}
-        {% endcomment %}
+    <div class="mediablock newsbar">
+        {% include 'partial/newsbar.html' with newsbar_title='Новости' list=news link='main:news_list' icon='allnewslink newsicon' %}
     </div>
-    <div class="newsbar">
-        {% include 'partial/newsbar.html' with newsbar_title='Новости' list=news link='main:news_list' %}
+    <div class="mediablock bulletinboard">
+        {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads icon='bulletinicon' link='main:ads_list' %}
     </div>
-    {# include 'partial/partners.html' #}
+    <div class="clear"></div>
 </div>
 {% else %}
 <div class="middlecontentblock">
@@ -39,10 +23,11 @@
     </div>
     {% endblock %}
     <div class="mainblock">
-        <div class="textblock">
+        <div class="textblock newstext">
         {% block detail_page %}
-            <p><time>{{ detail_page.created }}</time></p>
-            <p>{{ detail_page.title }}</p>
+            <p><a href="{{ detail_page.list_url }}">Все {{reverse_url_name}}</a></p>
+            <h2>{{ detail_page.title }}</h2>
+            <time>{{ detail_page.created }}</time>
             {% block content %}
                 {{detail_page.content|safe}}
             {% endblock %}

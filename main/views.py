@@ -62,6 +62,7 @@ class InfoPage(IndexPage):
         ctx = super(self.__class__, self).get_context_data(**kwargs)
         ctx['phones_info'] = User.objects.with_phones()
         ctx['docs_galleries'] = DocsGallery.objects.all()
+        ctx['video_galleries'] = VideoGallery.objects.all()
         return ctx
 info = InfoPage.as_view()
 
@@ -82,6 +83,12 @@ staff = StaffPage.as_view()
 class DetailPage(ContextMixin, DetailView):
     template_name = 'object_detail.html'
     context_object_name = 'detail_page'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(DetailPage, self).get_context_data(**kwargs)
+        ctx['reverse_url_name'] = ctx.get('detail_page'
+                                    ).__class__._meta.verbose_name_plural.lower()
+        return ctx
 
 ads = DetailPage.as_view(model=Ad)
 calendar_event = DetailPage.as_view(model=Calendar)

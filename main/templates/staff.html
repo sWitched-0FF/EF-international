@@ -3,28 +3,8 @@
 
 {% block middle %}
 <div class="middlecontentblock">
-    <div class="promoblockspart">
-        <div class="newsbar">
-            {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads bottom_color='E3E3E3' bottom_link_color='000' link='main:ads_list' %}
-        </div>
-
-
-        <div class="newsbar">
-            <h3>График отпусков</h3>
-            <ol>
-            {% for vac in on_vacations %}
-                <li>{{vac.user}} с <time>{{vac.start_date}}</time> по <time>{{vac.end_date}}</time></li>
-            {% empty %}
-                <li> --- </li>
-            {% endfor %}
-            </ol>
-            <div class="subscribeblock">
-            </div>
-        </div>
-    </div>
-    
     {% if birthday_users or new_users %}
-    <div class="newsbar">
+    <div class="mediablock newsbar">
         {% if new_users %}
         <h3>Новые сотрудники</h3>
             <ol>
@@ -42,13 +22,11 @@
             {% endfor %}
             </ul>
         {% endif %}
-        <div class="subscribeblock" style="background: none repeat scroll 0 0 #FF8200; color:  #fff;">
-        </div>
     </div>
     {% endif %}
 
-    <div class="newsbar" style="background: none repeat scroll 0 0 #02589B;color:  #fff;">
-        <h3 style="color:  #fff;">Оргструктура</h3>
+    <div class="mediablock newsbar">
+        <h3>Оргструктура</h3>
         {% full_tree_for_model main.CompanyStructure as nodes %}
         {% if nodes %}
         <ul class="root">
@@ -65,5 +43,22 @@
         {% endif %}
         </ul>
     </div>
+
+    <div class="mediablock bulletinboard">
+        {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads icon='bulletinicon' link='main:ads_list' %}
+    </div>
+
+
+    <div class="mediablock newsbar">
+        <h3>График отпусков</h3>
+        <ol>
+        {% for vac in on_vacations %}
+            <li>{{vac.user}} с <time>{{vac.start_date}}</time> по <time>{{vac.end_date}}</time></li>
+        {% empty %}
+            <li> --- </li>
+        {% endfor %}
+        </ol>
+    </div> 
+    <div class="clear"></div>     
 </div>
 {% endblock %}

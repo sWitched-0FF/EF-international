@@ -69,6 +69,10 @@ class News(AbstractPage):
     def get_absolute_url(self):
         return reverse('main:news', kwargs=dict(pk=self.pk))
 
+    @classmethod
+    def list_url(cls):
+        return reverse('main:news_list')
+
 
 class Ad(AbstractPage):
     u''' Доска Объявлений портала '''
@@ -79,6 +83,10 @@ class Ad(AbstractPage):
     def get_absolute_url(self):
         return reverse('main:ads', kwargs=dict(pk=self.pk))
 
+    @classmethod
+    def list_url(cls):
+        return reverse('main:ads_list')
+
 
 class Contest(AbstractPage):
     u'''конкурсы '''
@@ -88,6 +96,10 @@ class Contest(AbstractPage):
 
     def get_absolute_url(self):
         return reverse('main:contests', kwargs=dict(pk=self.pk))
+
+    @classmethod
+    def list_url(cls):
+        return reverse('main:contests_list')
 
 
 class Calendar(AbstractPage):
@@ -101,3 +113,7 @@ class Calendar(AbstractPage):
 
     def get_absolute_url(self):
         return reverse('main:calendar_event', kwargs=dict(pk=self.pk))
+
+    @classmethod
+    def list_url(cls):
+        return reverse('main:calendar')
