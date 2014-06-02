@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Верстка страницы "Список новостей/событий"</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/fancyfields.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="js/fancyfields-1.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.datepicker-ru.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body class="w1280px">
+    <header>
+        <div class="container">
+            <div class="headlogo">
+                <a href="/"><img src="images/design/logo.png" alt="ExpoForum"></a>
+            </div>
+            <div class="headcontacts">
+                +7 (812) <b>240-40-40</b> <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+            </div>
+            <div class="rightsection">
+                <div class="headerlogin">
+                    <form class="" action="#" method="post">
+                        <input type="e-mail" name="email" value="" placeholder="Электронная почта">
+                        <input type="password" name="password" value="" placeholder="Пароль">
+                        <button type="submit" class="lightbluebtn">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="topcontentblock">
+                <nav class="mainnav">
+                    <ul class="mainnavlist">
+                        <li><a href="#" class="mainnavlink">Главная</a></li>
+                        <li><a href="#" class="mainnavlink">Сотрудники</a></li>
+                        <li><a href="#" class="mainnavlink">Справочная информация</a></li>
+                        <li><a href="#" class="mainnavlink">Жизнь компании</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="middlecontentblock">
+                <div class="sidebar">
+                    <div class="announcements">
+                        <h3>Ближайшие события</h3>
+                        <ul class="announcementslist">
+                            <li class="announcement"><time>26.08 – 01.09</time> Агрорусь</li>
+                            <li class="announcement"><time>10.09 – 13.09</time> Энергетический форум</li>
+                            <li class="announcement"><time>10.09 – 13.09</time> Энергетический форум</li>
+                            <li class="announcement"><time>07.10 – 10.10</time> Петербургский Международный Газовый Форум 2014</li>
+                            <li class="announcement"><time>15.10 – 17.10</time> Биоиндустрия 2014</li>
+                            <li class="announcement"><time>15.10 – 17.10</time> Петербургский международный форум здоровья</li>
+                        </ul>
+                        <a href="#" class="allannouncements eventscalendaricon">Смотреть все события в календаре</a>
+                    </div>
+                </div>
+                <div class="mainblock">
+                    <h2>Календарь событий</h2>
+                    <div class="textblock eventblock blue">
+                        <div class="eventleftblock">
+                            <div class="eventheader">
+                                <time>12 марта — 14 марта, 2014</time>
+                            </div>
+                            <div class="eventanounce">
+                                <h3>Открытие портала</h3>
+                                <p>Петербургская техническая ярмарка (ПТЯ) – это многопрофильное синергетическое мероприятие федерального уровня, представляющее всю технологическую цепочку производства – от научных разработок и производств металла до продукта машиностроительного комплекса. Выставочная программа Ярмарки по традиции объединяет в себе ряд наиболее актуальных для промышленного рынка отраслевых направлений.</p>
+                            </div>
+                            <div class="eventinfo">
+                                <p><b>Место проведения:</b> «Ленэкспо», Большой пр. В. О., д. 103, павильон №7, 8А</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="textblock eventblock orange">
+                        <div class="eventleftblock">
+                            <div class="eventheader">
+                                <time>19 марта — 21 марта, 2014</time>
+                            </div>
+                            <div class="eventanounce">
+                                <h3>12 июня День независимости России</h3>
+                                <p>11 июня, сокращенный рабочий день, на 1 час, работаем до 17 часов 12, 13, 14, 15 июня нерабочие, праздничные дни.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="textblock eventblock green">
+                        <div class="eventleftblock">
+                            <div class="eventheader">
+                                <time>19 марта — 21 марта, 2014</time>
+                            </div>
+                            <div class="eventanounce">
+                                <h3>Экология большого города 2014</h3>
+                                <p>Международная специализированная выставка оборудования, инновационных технологий в области охраны окружающей среды и обеспечения экологической безопасности</p>
+                                <p><a href="#">Размещение иногородних участников и посетителей в гостиницах Санкт-Петербурга</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="textblock eventblock blue">
+                        <div class="eventleftblock">
+                            <div class="eventheader">
+                                <time>19 марта — 21 марта, 2014</time>
+                            </div>
+                            <div class="eventanounce">
+                                <h3>ЖКХ России 2014</h3>
+                                <p>Приглашаем принять участие в X Международной специализированной выставке и конференции «ЖКХ РОССИИ» –- ведущем мероприятии для руководителей и специалистов жилищно-коммунального комплекса. </p>
+                                <p><a href="#">Размещение иногородних участников и посетителей в гостиницах Санкт-Петербурга</a></p>
+                            </div>
+                            <div class="eventinfo">
+                                <p><b>Место проведения:</b> «Ленэкспо», Большой пр. В. О., д. 103, павильон №5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paginationblock">
+                        <ul class="pageslist">
+                            <li><span>Предыдущая</span></li>
+                            <li><a href="/">1</a></li>
+                            <li><a href="/" class="currentPage">2</a></li>
+                            <li><a href="/">3</a></li>
+                            <li><a href="/">4</a></li>
+                            <li><a href="/">5</a></li>
+                            <li><a href="/">6</a></li>
+                            <li><a href="/">Следующая</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"><br/></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                Экспофорум &copy; 2014
+            </div>
+            <div class="footercontacts">
+                +7 (812) 240-40-40  <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+            </div>
+            <div class="footersocial">
+                <p>Экспофорум в соцсетях:</p>
+                <ul class="sociallinks">
+                    <li><a href="#" class="socialicon vkcom">vkcom</a></li>
+                    <li><a href="#" class="socialicon facebook">facebook</a></li>
+                    <li><a href="#" class="socialicon googleplus">googleplus</a></li>
+                    <li><a href="#" class="socialicon twitter">twitter</a></li>
+                    <li><a href="#" class="socialicon youtube">youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
