@@ -1,0 +1,31 @@
+{% if type %}
+<div class="middlecontentblock">
+    <div class="mediablock newsbar">
+        {% include 'partial/newsbar.html' with newsbar_title='Новости' list=news link='main:news_list' icon='allnewslink newsicon' %}
+    </div>
+    <div class="mediablock bulletinboard">
+        {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads icon='bulletinicon' link='main:ads_list' %}
+    </div>
+    <div class="clear"></div>
+</div>
+{% else %}
+<div class="middlecontentblock">
+    {% block sidebar %}
+    <div class="sidebar">
+        {% include 'partial/announcements.html' %}
+    </div>
+    {% endblock %}
+    <div class="mainblock">
+        <div class="textblock newstext">
+        {% block detail_page %}
+            <p><a href="{{ detail_page.list_url }}">Все {{reverse_url_name}}</a></p>
+            <h2>{{ detail_page.title }}</h2>
+            <time>{{ detail_page.created }}</time>
+            {% block content %}
+                {{detail_page.content|safe}}
+            {% endblock %}
+        {% endblock %}
+        </div>
+    </div>
+</div>
+{% endif %}

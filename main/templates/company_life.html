@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block middle %}
+<div class="middlecontentblock">
+    <div class="mediablock newsbar">
+        {% include 'partial/newsbar.html' with newsbar_title='Новости' list=news link='main:news_list' icon='allnewslink newsicon' %}
+    </div>
+    <div class="mediablock bulletinboard">
+        {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads icon='bulletinicon' link='main:ads_list' %}
+    </div>
+    <div class="mediablock contest">
+        {% include 'partial/newsbar.html' with newsbar_title='Конкрусы' list=contests icon='contesticon' link='main:contests_list' %}
+    </div>
+    <div class="mediablock photoarchive">
+        <h3>Фотографии</h3>
+        <ul class="mediaarchivelist">
+            {% for page in image_galleries %}
+                <li class="mediaarchiveitem">
+                    <h4><a href="{{page.get_absolute_url}}" class="pseudolink">{{page.title}}</a></h4>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="bottomblock">
+            <a href="{% url 'gallery:image_gallery_list' %}" class="photoicon">Смотреть все фотографии</a>
+        </div>
+    </div>
+    <div class="mediablock videoarchive clear">
+        <h3>Видео</h3>
+        <ul class="mediaarchivelist">
+            {% for page in video_galleries %}
+                <li class="mediaarchiveitem">
+                    <h4><a href="{{page.get_absolute_url}}" class="pseudolink">{{page.title}}</a></h4>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="bottomblock">
+            <a href="{% url 'gallery:video_gallery_list' %}" class="videoicon">Смотреть все видео</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+{% endblock %}

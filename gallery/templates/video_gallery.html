@@ -1,0 +1,34 @@
+{% extends 'basecontent.html' %}
+{% load embed_video_tags %}
+{% block middle %}
+<div class="middlecontentblock">
+    {% block sidebar %}
+    <div class="sidebar">
+        {% include 'partial/announcements.html' %}
+        <div class="sideblock bluebanner">
+            <section class="sideblocktext centertext">
+                <div class="clear"></div>
+            </section>
+        </div>
+        <div class="sideblock">
+        </div>
+    </div>
+    {% endblock %}
+    <div class="mainblock">
+        <div class="textblock">
+        {% block detail_page %}
+            <p><time>{{ detail_page.created }}</time></p>
+            <p>{{ detail_page.title }}</p>
+            {% block content %}
+                {{detail_page.content|safe}}
+            {% endblock %}
+        {% endblock %}
+        </div>
+    {% for item in detail_page.video_set.all %}
+        <div class="imagegallerybanner">
+            {% video item.video '320 x 240' %}
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

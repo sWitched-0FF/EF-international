@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>ExpoForum</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/fancyfields.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="js/fancyfields-1.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.datepicker-ru.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body class="w1280px">
+	<header>
+		<div class="container">
+			<div class="headlogo">
+				<a href="/"><img src="images/design/logo.png" alt="ExpoForum"></a>
+			</div>
+			<div class="headcontacts">
+				+7 (812) <b>240-40-40</b> <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+			</div>
+			<div class="rightsection">
+				<div class="languageselect">
+					<ul>
+						<li><a href="#" class="languageicon ru">rus</a></li>
+						<li><a href="#" class="languageicon en">eng</a></li>
+						<li><a href="#" class="languageicon zh">chn</a></li>
+					</ul>
+				</div>
+				<div class="headersearch">
+					<form class="" action="#" method="post">
+						<input type="search" name="keyword" value="" placeholder="Поиск по сайту">
+						<button type="submit" class="headersearchbtn">Найти</button>
+					</form>
+				</div>
+				<div class="headmenu">
+					<ul>
+						<li><a href="#">О компании</a></li>
+						<li><a href="#">Санкт-Петербург</a></li>
+						<li><a href="#">Новости</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<div class="topcontentblock">
+				<nav class="mainnav">
+					<ul class="mainnavlist">
+						<li><a href="#" class="mainnavlink">Организаторам</a></li>
+						<li><a href="#" class="mainnavlink">Участникам</a></li>
+						<li><a href="#" class="mainnavlink">Посетителям</a></li>
+						<li><a href="#" class="mainnavlink">Прессе</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="middlecontentblock">
+				<div class="sidebar">
+					<div class="topsubmenu">
+						<ul class="topsubmenulist">
+							<li><a href="#" class="topsubmenulink eventscalendaricon active">Календарь событий</a></li>
+							<li><a href="#" class="topsubmenulink schemeicon">План и инфраструктура</a></li>
+							<li><a href="#" class="topsubmenulink routeicon">Как добраться</a></li>
+						</ul>
+					</div>
+					<div class="sideblock greenbanner">
+						<section class="sideblocktext">
+							<h3>Подбор событий</h3>
+							<form class="eventsfilter">
+								<h4>По дате</h4>
+								<div class="eventdate">
+									<label>С</label>
+									<input type="text" class="dateui" name="date1" value="" placeholder="14.05.2014">
+								</div>
+								<div class="eventdate">
+									<label>По</label>
+									<input type="text" class="dateui" name="date2" value="" placeholder="29.05.2014">
+								</div>
+								<p>Или ближайший <a href="#" class="pseudolink">месяц</a> / <a href="#" class="pseudolink">неделя</a></p>
+								<div class="eventline"></div>
+								<h4>По типу события</h4>
+								<select name="eventtype" class="niceselect">
+									<option value="0">Любое</option>
+									<option value="1">Ярмарка</option>
+									<option value="2">Выставка</option>
+								</select>
+								<div class="eventline"></div>
+								<h4>По тематике<a href="#" class="rightlink pseudolink">Показать все</a></h4>
+								<div class="halfcol">
+									<input type="checkbox" name="eventtheme" value="0" class="nicecheck" /><label>Автомобили</label>
+									<input type="checkbox" name="eventtheme" value="1" class="nicecheck" /><label>Строительство</label>
+									<input type="checkbox" name="eventtheme" value="2" class="nicecheck" /><label>Одежда</label>
+								</div>
+								<div class="halfcol">
+									<input type="checkbox" name="eventtheme" value="3" class="nicecheck" /><label>Ювелирные изделия</label>
+									<input type="checkbox" name="eventtheme" value="4" class="nicecheck" /><label>Информационные технологии</label>
+									<input type="checkbox" name="eventtheme" value="5" class="nicecheck" /><label>Промышленность</label>
+								</div>
+								<div class="clear"></div>
+								<button type="submit" class="eventfilterbtn">Найти</button>
+							</form>
+						</section>
+					</div>
+					<div class="sideblock bluebanner">
+						<section class="sideblocktext centertext">
+							<form class="newssubscribe" action="#" method="post">
+								<button type="submit" name="subscribebtn" id="subscribe">Подписаться на новости</button>
+							</form>
+							<div class="clear"></div>
+						</section>
+					</div>
+					<div class="sideblock">
+						<img src="images/promos1.jpg" alt="Баннер">
+					</div>
+				</div>
+				<div class="mainblock">
+					<div class="textblock events">
+						<h2>Календарь событий</h2>
+						<p>Начинайте вводить название события или ключевые слова, «умный поиск» вам подскажет</p>
+						<form class="eventsearch" action="#" method="post">
+							<input type="search" name="keyword" value="" placeholder="Поиск по названию события, описанию и тематике">
+							<button type="submit" class="searchbtnicon">Найти</button>
+							<button type="submit" class="bluebtn">Найти</button>
+						</form>
+					</div>
+					<div class="textblock eventblock blue">
+						<div class="eventrightblock">
+							<span class="eventtag">Ярмарка</span>
+							<a href="#"><img src="images/event1.jpg" alt="event"></a>
+						</div>
+						<div class="eventleftblock">
+							<div class="eventheader">
+								<time>12 марта — 14 марта, 2014</time>
+								<b>Добавить событие:</b> <a href="#">в Google-календарь</a> <a href="#">в Outlook</a>
+							</div>
+							<div class="eventanounce">
+								<h3>ПТЯ – Петербургская техническая ярмарка 2014</h3>
+								<p>Петербургская техническая ярмарка (ПТЯ) – это многопрофильное синергетическое мероприятие федерального уровня, представляющее всю технологическую цепочку производства – от научных разработок и производств металла до продукта машиностроительного комплекса. Выставочная программа Ярмарки по традиции объединяет в себе ряд наиболее актуальных для промышленного рынка отраслевых направлений.</p>
+							</div>
+							<div class="eventinfo">
+								<p><b>Место проведения:</b> «Ленэкспо», Большой пр. В. О., д. 103, павильон №7, 8А</p>
+								<p><b>Организатор:</b> Экспофорум</p>
+								<p><b>Сайт выставки:</b> <a href="#">www.ptfair.ru</a></p>
+								<a href="#" class="registerbtn">Зарегистрироваться</a>
+							</div>
+						</div>
+					</div>
+					<div class="textblock eventblock orange">
+						<div class="eventrightblock">
+							<span class="eventtag">Выставка</span>
+							<a href="#"><img src="images/event2.jpg" alt="event"></a>
+						</div>
+						<div class="eventleftblock">
+							<div class="eventheader">
+								<time>19 марта — 21 марта, 2014</time>
+								<b>Добавить событие:</b> <a href="#">в Google-календарь</a> <a href="#">в Outlook</a>
+							</div>
+							<div class="eventanounce">
+								<h3>Интерфуд 2014</h3>
+								<p>18-я Международная выставка продуктов питания, напитков и ингредиентов</p>
+							</div>
+							<div class="eventinfo">
+								<p><b>Место проведения:</b> «Ленэкспо», Большой пр. В. О., д. 103, павильон №5</p>
+								<p><b>Организатор:</b> Экспофорум</p>
+								<p><b>Сайт выставки:</b> <a href="#">www.infoodspb.ru</a></p>
+								<a href="#" class="registerbtn">Зарегистрироваться</a>
+							</div>
+						</div>
+					</div>
+					<div class="textblock eventblock green">
+						<div class="eventrightblock">
+							<span class="eventtag">Заседание</span>
+							<a href="#"><img src="images/event3.jpg" alt="event"></a>
+						</div>
+						<div class="eventleftblock">
+							<div class="eventheader">
+								<time>19 марта — 21 марта, 2014</time>
+								<b>Добавить событие:</b> <a href="#">в Google-календарь</a> <a href="#">в Outlook</a>
+							</div>
+							<div class="eventanounce">
+								<h3>Экология большого города 2014</h3>
+								<p>Международная специализированная выставка оборудования, инновационных технологий в области охраны окружающей среды и обеспечения экологической безопасности</p>
+								<p><a href="#">Размещение иногородних участников и посетителей в гостиницах Санкт-Петербурга</a></p>
+							</div>
+							<div class="eventinfo">
+								<p><b>Место проведения:</b> «Ленэкспо», Большой пр. В. О., д. 103, павильон №7</p>
+								<p><b>Организатор:</b> Экспофорум</p>
+								<p><b>Сайт выставки:</b> <a href="#">ecology.expoforum.ru</a></p>
+								<a href="#" class="registerbtn">Зарегистрироваться</a>
+							</div>
+						</div>
+					</div>
+					<div class="textblock eventblock blue">
+						<div class="eventrightblock">
+							<span class="eventtag">Заседание</span>
+							<a href="#"><img src="images/event4.jpg" alt="event"></a>
+						</div>
+						<div class="eventleftblock">
+							<div class="eventheader">
+								<time>19 марта — 21 марта, 2014</time>
+								<b>Добавить событие:</b> <a href="#">в Google-календарь</a> <a href="#">в Outlook</a>
+							</div>
+							<div class="eventanounce">
+								<h3>ЖКХ России 2014</h3>
+								<p>Приглашаем принять участие в X Международной специализированной выставке и конференции «ЖКХ РОССИИ» –- ведущем мероприятии для руководителей и специалистов жилищно-коммунального комплекса. </p>
+								<p><a href="#">Размещение иногородних участников и посетителей в гостиницах Санкт-Петербурга</a></p>
+							</div>
+							<div class="eventinfo">
+								<p><b>Место проведения:</b> «Ленэкспо», Большой пр. В. О., д. 103, павильон №5</p>
+								<p><b>Организатор:</b> Экспофорум</p>
+								<p><b>Сайт выставки:</b> <a href="#">gkh.expoforum.ru</a></p>
+								<a href="#" class="registerbtn">Зарегистрироваться</a>
+							</div>
+						</div>
+					</div>
+					<div class="paginationblock">
+						<ul class="pageslist">
+							<li><span>Предыдущая</span></li>
+							<li><a href="/">1</a></li>
+							<li><a href="/" class="currentPage">2</a></li>
+							<li><a href="/">3</a></li>
+							<li><a href="/">4</a></li>
+							<li><a href="/">5</a></li>
+							<li><a href="/">6</a></li>
+							<li><a href="/">Следующая</a></li>
+						</ul>
+					</div>
+					<div class="clear"><br/></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="bottomnav">
+		<div class="container">
+			<div class="column3">
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>О компании</b></a></li>
+					<li><a href="#">Миссия</a></li>
+					<li><a href="#">История</a></li>
+					<li><a href="#">Партнеры</a></li>
+					<li><a href="#">СМИ о нас</a></li>
+					<li><a href="#">Медиа-банк</a></li>
+					<li><a href="#">Руководство</a></li>
+					<li><a href="#">Вакансии</a></li>
+					<li><a href="#">Контакты подразделений</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Новости</b></a></li>
+					<li><a href="#">Новости компании</a></li>
+					<li><a href="#">Новости выставок</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>О Санкт-Петербурге</b></a></li>
+				</ul>
+			</div>
+			<div class="column3">
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Посетителям</b></a></li>
+					<li><a href="#">Сервисы</a></li>
+					<li><a href="#">Онлайн-регистрация на мероприятие</a></li>
+					<li><a href="#">Организация поездки</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Прессе</b></a></li>
+					<li><a href="#">Пресс-релизы</a></li>
+					<li><a href="#">Аккредитация</a></li>
+					<li><a href="#">Пресс-центр</a></li>
+					<li><a href="#">Организация поездки</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Участникам</b></a></li>
+					<li><a href="#">Общие условия участия</a></li>
+					<li><a href="#">Онлайн-заявка на участие</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Электронные каталоги</a></li>
+				</ul>
+			</div>
+			<div class="column3">
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Организаторам</b></a></li>
+					<li><a href="#">Преимущества центра</a></li>
+					<li><a href="#">Конгресс-центр</a></li>
+					<li><a href="#">Выставочные павильоны</a></li>
+					<li><a href="#">Рестораны и кафе</a></li>
+					<li><a href="#">Мероприятия</a></li>
+					<li><a href="#">Подбор помещения</a></li>
+					<li><a href="#">Онлайн-заявка на организацию мероприятия</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Документация</a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Календарь событий</b></a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>Как добраться</b></a></li>
+				</ul>
+				<ul class="bottomlinkslist">
+					<li><a href="#"><b>План и инфраструктура комплекса</b></a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="copyright">
+				Экспофорум &copy; 2014
+			</div>
+			<div class="footercontacts">
+				+7 (812) 240-40-40  <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+			</div>
+			<div class="footersocial">
+				<p>Экспофорум в соцсетях:</p>
+				<ul class="sociallinks">
+					<li><a href="#" class="socialicon vkcom">vkcom</a></li>
+					<li><a href="#" class="socialicon facebook">facebook</a></li>
+					<li><a href="#" class="socialicon googleplus">googleplus</a></li>
+					<li><a href="#" class="socialicon twitter">twitter</a></li>
+					<li><a href="#" class="socialicon youtube">youtube</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<div id="overlay">
+		<div class="modalbox">
+			<a href="#" id="closemodal">x</a>
+			<p><b>Подписаться на новости</b></p>
+			<form class="newssubscribefilter">
+				<fieldset>
+					<input type="checkbox" name="newstitle" value="0" class="nicecheck" /><label>Подписаться на все новости</label>
+					<input type="checkbox" name="newstitle" value="1" class="nicecheck" /><label>Подписаться на новости о компании</label>
+					<input type="checkbox" name="newstitle" value="2" class="nicecheck" /><label>Подписаться на новости о выставках:</label>
+				</fieldset>
+				<div class="newscontrolgroup">
+					<label>Выберите по названиям:</label>
+					<div class="multiselects">
+						<fieldset class="scroll-pane">
+							<input type="checkbox" name="newstitle" value="0" class="nicecheck" /><label>Агропром</label>
+							<input type="checkbox" name="newstitle" value="1" class="nicecheck" /><label>Нормы водного права</label>
+							<input type="checkbox" name="newstitle" value="2" class="nicecheck" /><label>Интерфуд</label>
+							<input type="checkbox" name="newstitle" value="3" class="nicecheck" /><label>Сельское хозяйство</label>
+						</fieldset>
+					</div>
+				</div>
+				<div class="newscontrolgroup">
+					<label>Выберите по тематике:</label>
+					<div class="multiselects">
+						<fieldset class="scroll-pane">
+							<input type="checkbox" name="newstheme" value="0" class="nicecheck" /><label>Сельское хозяйство</label>
+							<input type="checkbox" name="newstheme" value="1" class="nicecheck" /><label>Информационные технологии</label>
+							<input type="checkbox" name="newstheme" value="2" class="nicecheck" /><label>Агропром</label>
+							<input type="checkbox" name="newstheme" value="3" class="nicecheck" /><label>Нормы водного права</label>
+							<input type="checkbox" name="newstheme" value="4" class="nicecheck" /><label>Интерфуд</label>
+						</fieldset>
+					</div>
+				</div>
+				<input type="checkbox" name="newstitle" value="0" class="nicecheck" /><label>Подписаться на календарь событий</label>
+				<input type="email" name="email" value="" placeholder="Адрес электронной почты">
+				<button type="submit" name="subscribebtn">Подписаться на новости</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

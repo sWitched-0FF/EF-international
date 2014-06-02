@@ -1,0 +1,27 @@
+{% extends 'basecontent.html' %}
+
+{% block middle %}
+<div class="middlecontentblock">
+    <div class="sidebar">
+        {% include 'partial/announcements.html' %}
+    </div>
+    <div class="mainblock">
+        <h2>{{title}}</h2>
+        {% for n in object_list %}
+        <div class="textblock eventblock blue">
+            <div class="eventleftblock">
+                <div class="eventheader">
+                    <time>{{n.created}}</time>
+                </div>
+                <div class="eventanounce">
+                    <h3><a href="{{n.get_absolute_url}}">{{n.title}}</a></h3>
+                    {{n.content|safe}}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% include 'partial/paginator.html' %}
+        <div class="clear"><br/></div>
+    </div>
+</div>
+{% endblock %}

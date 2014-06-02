@@ -1,0 +1,30 @@
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<header>
+    <div class="container">
+        <div class="headlogo">
+            <a href="/"><img src="{{STATIC_PREFIX}}images/design/logo.png" alt="ExpoForum"></a>
+        </div>
+        <div class="headcontacts">
+            +7 (812) <b>240-40-40</b> <a href="mailto:info@expoforum.ru">info@expoforum.ru</a>
+        </div>
+        <div class="rightsection">
+            <div class="headerlogin">
+            {% if user.is_authenticated %}
+                <p>{{user.get_full_name}}</p>
+                <form class="" action="{% url 'rest_framework:logout' %}?next=/" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="lightbluebtn">Выйти</button>
+                </form>
+            {% else %}
+                <form class="" action="{% url 'rest_framework:login' %}" method="post">
+                    {% csrf_token %}
+                    <input type="e-mail" name="username" value="" placeholder="Электронная почта" maxlength="100">
+                    <input type="password" name="password" value="" placeholder="Пароль" maxlength="100">
+                    <button type="submit" class="lightbluebtn">Войти</button>
+                </form>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</header>

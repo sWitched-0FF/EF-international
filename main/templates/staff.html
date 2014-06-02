@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load mptt_tags %}
+
+{% block middle %}
+<div class="middlecontentblock">
+    <div class="mediablock newstaff">
+        <h3>Новые сотрудники</h3>
+        <ul class="newstafflist">
+        {% for user in new_users %}
+            <li class="newstaffitem">
+                <p><time>{{user.date_joined}}</time></p>
+                <p>{{user.get_full_name}}</p>
+            </li>
+        {% empty %}
+            <li class="newstaffitem">-</li>
+        {% endfor %}
+        </ul>
+        <div class="bottomblock">
+            <a href="#" class="stafficon">Смотреть всех новых сотрудников</a>
+        </div>
+
+        {% if birthday_users %}
+        <h3>ДР</h3>
+        <ul class="newstafflist">
+        {% for user in birthday_users %}
+            <li class="newstaffitem">
+                <p><time>{{user.date_of_birth}}</time></p>
+                <p>{{user.get_full_name}}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    </div>
+
+    <div class="mediablock bulletinboard">
+        {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads icon='bulletinicon' link='main:ads_list' %}
+    </div>
+
+    <div class="mediablock orgstrukture">
+        <h3>Оргструктура</h3>
+        {% full_tree_for_model main.CompanyStructure as nodes %}
+        {% if nodes %}
+        <ul class="nomarker nomargin">
+        {% recursetree nodes %}
+            <li>
+                {{ node.name }}
+                {% if not node.is_leaf_node %}
+                    <ul class="nomarker">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endrecursetree %}
+        </ul>
+        <div class="bottomblock">
+            <a href="#" class="orgstruktureicon">Смотреть всю оргструктуру</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="mediablock vacationgraph">
+        <h3>График отпусков</h3>
+        <ul class="vacationlist">
+        {% for vac in on_vacations %}
+            <li class="vacationitem">
+                <p><time>{{vac.start_date}} - {{vac.end_date}}</time></p>
+                <p>{{user.get_full_name}}</p>
+            </li>
+        {% empty %}
+            <li> --- </li>
+        {% endfor %}
+        </ul>
+        <div class="bottomblock">
+            <a href="#" class="vacationicon">Смотреть весь график отпусков</a>
+        </div>
+    </div> 
+    <div class="clear"></div>     
+</div>
+{% endblock %}

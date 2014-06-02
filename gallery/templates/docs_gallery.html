@@ -1,0 +1,32 @@
+{% extends 'basecontent.html' %}
+
+{% block middle %}
+<div class="middlecontentblock">
+    {% block sidebar %}
+    <div class="sidebar">
+        {% include 'partial/announcements.html' %}
+        <div class="sideblock bluebanner">
+            <section class="sideblocktext centertext">
+                <div class="clear"></div>
+            </section>
+        </div>
+        <div class="sideblock">
+        </div>
+    </div>
+    {% endblock %}
+    <div class="mainblock">
+        <div class="textblock">
+        {% block detail_page %}
+            <p><time>{{ detail_page.created }}</time></p>
+            <p>{{ detail_page.title }}</p>
+            {% block content %}
+                {{detail_page.content|safe}}
+            {% endblock %}
+            {% for item in detail_page.docfile_set.all %}
+                <a href="{{item.doc_file.url}}">{{item.doc_file.name}}</a><br/>
+            {% endfor %}
+        {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}
