@@ -43,5 +43,7 @@ class User(AbstractUser):
     USERNAME_FIELD = 'username'
 
     def get_full_name(self):
-        full_name = '%s %s' % (self.first_name, self.last_name)
+        full_name = '{0} {1}'.format(self.first_name, self.last_name)
+        if self.post:
+            full_name = '{0} {1}'.format(full_name, self.post)
         return full_name.strip() or self.username

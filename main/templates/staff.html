@@ -3,61 +3,76 @@
 
 {% block middle %}
 <div class="middlecontentblock">
-    {% if birthday_users or new_users %}
-    <div class="mediablock newsbar">
-        {% if new_users %}
+    <div class="mediablock newstaff">
         <h3>Новые сотрудники</h3>
-            <ol>
-            {% for user in new_users %}
-                <li>{{user.get_full_name}} <time>{{user.date_joined}}</time></li>
-            {% endfor %}
-            </ol>
-        {% endif %}
+        <ul class="newstafflist">
+        {% for user in new_users %}
+            <li class="newstaffitem">
+                <p><time>{{user.date_joined}}</time></p>
+                <p>{{user.get_full_name}}</p>
+            </li>
+        {% empty %}
+            <li class="newstaffitem">-</li>
+        {% endfor %}
+        </ul>
+        <div class="bottomblock">
+            <a href="#" class="stafficon">Смотреть всех новых сотрудников</a>
+        </div>
 
         {% if birthday_users %}
         <h3>ДР</h3>
-            <ol>
-            {% for user in birthday_users %}
-                <li>{{user.get_full_name}} <time>{{user.date_of_birth}}</time></li>
-            {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
-    {% endif %}
-
-    <div class="mediablock newsbar">
-        <h3>Оргструктура</h3>
-        {% full_tree_for_model main.CompanyStructure as nodes %}
-        {% if nodes %}
-        <ul class="root">
-        {% recursetree nodes %}
-            <li>
-                {{ node.name }}
-                {% if not node.is_leaf_node %}
-                    <ul class="children">
-                        {{ children }}
-                    </ul>
-                {% endif %}
+        <ul class="newstafflist">
+        {% for user in birthday_users %}
+            <li class="newstaffitem">
+                <p><time>{{user.date_of_birth}}</time></p>
+                <p>{{user.get_full_name}}</p>
             </li>
-        {% endrecursetree %}
-        {% endif %}
+        {% endfor %}
         </ul>
+    {% endif %}
     </div>
 
     <div class="mediablock bulletinboard">
         {% include 'partial/newsbar.html' with newsbar_title='Объявления' list=ads icon='bulletinicon' link='main:ads_list' %}
     </div>
 
+    <div class="mediablock orgstrukture">
+        <h3>Оргструктура</h3>
+        {% full_tree_for_model main.CompanyStructure as nodes %}
+        {% if nodes %}
+        <ul class="nomarker nomargin">
+        {% recursetree nodes %}
+            <li>
+                {{ node.name }}
+                {% if not node.is_leaf_node %}
+                    <ul class="nomarker">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endrecursetree %}
+        </ul>
+        <div class="bottomblock">
+            <a href="#" class="orgstruktureicon">Смотреть всю оргструктуру</a>
+        </div>
+        {% endif %}
+    </div>
 
-    <div class="mediablock newsbar">
+    <div class="mediablock vacationgraph">
         <h3>График отпусков</h3>
-        <ol>
+        <ul class="vacationlist">
         {% for vac in on_vacations %}
-            <li>{{vac.user}} с <time>{{vac.start_date}}</time> по <time>{{vac.end_date}}</time></li>
+            <li class="vacationitem">
+                <p><time>{{vac.start_date}} - {{vac.end_date}}</time></p>
+                <p>{{user.get_full_name}}</p>
+            </li>
         {% empty %}
             <li> --- </li>
         {% endfor %}
-        </ol>
+        </ul>
+        <div class="bottomblock">
+            <a href="#" class="vacationicon">Смотреть весь график отпусков</a>
+        </div>
     </div> 
     <div class="clear"></div>     
 </div>
